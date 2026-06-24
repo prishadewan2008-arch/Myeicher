@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+  /* background-image: url('/src/assets/bg 1.svg'); */
+}
+
+.login-box {
+    display : flex;
+    flex-direction: column;
+    width : 394px;
+    height : 504px; 
+    padding-top : 198.5px;
+    padding-left : 986px;
+    border-radius : 8px;
+    padding : 32px;
+    Gap : 16px;
+    background-color: #FFFFFF;
+    justify-content: center; 
+    align-items: center;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 1);
+    /* background-image: url('/src/assets/bg1.svg'); */
+}
+
+.welcome{
+    display : flex;
+    flex-direction: column;
+    width : 330px;
+    height : 44px;
+    gap : 8px;
+}
+
+.dropdown select{
+    display : flex;
+    flex-direction: row;
+    width : 330px;
+    height : 40px;
+    border-radius : 4px;
+    border : 1px;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    gap : 40px;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-color: rgba(209, 213, 219, 1);   
+}
+
+.mobile{
+    display : flex;
+    flex-direction: column;
+    width : 330px;
+    height: 178px;
+    gap : 24px;
+}
+
+.mobile-number{
+    display : flex;
+    /* margin-top: 0px; */
+}
+
+.mobile label{
+    display: block;
+    margin-bottom: -13px;
+}
+
+.mobile span{
+    width : 57px;
+    height : 40px;
+    border-right: 1px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    border-style: solid;
+    border-color: rgba(209, 213, 219, 1);
+    background-color: rgba(235, 235, 235, 1);
+}
+
+.mobile input{
+    width : 273px;
+    height : 40px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    background-color: rgba(235, 235, 235, 1);
+    border-style: solid;
+    border-color: rgba(209, 213, 219, 1);
+}
+
+.proceed{
+    display : flex;
+    flex-direction: row;
+    width : 330px;
+    height : 42px;
+    border-radius: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: rgba(237, 37, 65, 1);
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.05);
+    border-style: solid;
+    border-color: rgba(237, 37, 65, 1);
+}
+
+.divider{
+    display : flex;
+    flex-direction: row;
+    width : 330px;
+    height : 20px;
+}
+
+.divider span{
+    flex : 1;
+    height : 1px;
+    background: black;
+    margin-top: 10px;
+}
+
+.sign-upbtn{
+    display : flex;
+    flex-direction: row;
+    width : 330px;
+    height : 42px;
+    border-radius: 4px;
+    border: 1px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #FFFFFF;
+    color: #ED2541;
+    border-style: solid;
+    border-color: #ED2541;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-up{
+    display : flex;
+    flex-direction: row;
+    width: 330px;
+    height: 36px;
+
+} 

@@ -5,7 +5,7 @@ import { LoginPage } from './login-page/login-page';
 
 @Component({
   selector: 'app-root', 
-  imports: [RouterOutlet,LoginPage],
+  imports: [LoginPage],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
