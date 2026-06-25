@@ -13,6 +13,22 @@
     background-repeat: no-repeat;
 }
 
+.shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0) 100%
+
+    );
+}
+
 /* .logo{
     width : 94px;
     height : 94px;
@@ -23,7 +39,7 @@
 
 } */
 
-.navbar {
+/* .navbar {
   position: relative;
   z-index: 3;
   display: flex;
@@ -39,7 +55,7 @@
 .my-eicher-logo {
    height: 80px;
   width: 90px;
-}
+} */
 
 .login-box {
     display : flex;

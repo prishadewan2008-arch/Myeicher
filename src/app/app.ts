@@ -11,4 +11,5 @@ import { LoginPage } from './login-page/login-page';
 })
 export class App {
   protected readonly title = signal('Myeicher');
+  
 }
