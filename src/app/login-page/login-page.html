@@ -1,17 +1,23 @@
 <div class="bg">
-  <div class="shadow">
-    <nav class="navbar">
-      <a class="navbar-brand">
-        <img class="my-eicher-logo" src="/assets/logo.svg" alt="My Eicher logo" />
-      </a>
-    </nav>
-    <div class="login-box">
-      <div class="welcome">
+  <div class="shadow"></div>
+
+  <nav class="navbar">
+    <a class="navbar-brand">
+      <img class="my-eicher-logo" src="/assets/logo.svg" alt="My Eicher logo" />
+    </a>
+  </nav>
+
+  <div class="login-box">
+    <div class="welcome">
         <h2>Welcome to My Eicher!</h2>
         <p>Your connected Fleet Management System</p>
       </div>
       <div class="dropdown">
-        <select (change)="onRoleChange($event)">
+        <select
+          [(ngModel)]="selectedRole"
+          (ngModelChange)="onRoleChange($event)"
+          name="role"
+        >
           <option value="Customer">Customers</option>
           <option value="Dealer">Dealer</option>
           <option value="VECV">VECV</option>
@@ -33,6 +39,5 @@
       </div>
       <button class="sign-upbtn">SIGN UP</button>
       <p class="sign-up">How to sign-up on My Eicher?</p>
-    </div>
   </div>
 </div>
