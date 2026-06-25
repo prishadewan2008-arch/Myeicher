@@ -1,48 +1,38 @@
-<html>
-
-<body>
-    <div class="bg">
-        <div class="shadow">
-            <!-- <img src="./../../assets/logo.svg" alt="Logo" class="logo"> -->
-            <nav class="navbar">
-                <a class="navbar-brand">
-                    <img class="my-eicher-logo" src="./../../assets/logo.svg" alt="" />
-                </a>
-            </nav>
-            <div class="login-box">
-                <div class="welcome">
-                    <h2>Welcome to My Eicher!</h2>
-                    <p>Your connected Fleet Management System</p>
-                </div>
-                <div class="dropdown">
-                    <select>
-                        <option>Customer</option>
-                        <option>Dealer</option>
-                        <option>VECV</option>
-                    </select>
-                </div>
-                <div class="mobile">
-                    <p>Login using your registered Mobile Number</p>
-                    <label for="phone">Mobile Number:</label>
-                    <div class="mobile-number">
-                        <span>+91</span>
-                        <input type="text" id="phone" placeholder="Enter your mobile number">
-                    </div>
-                    <button class="proceed">Proceed</button>
-                </div>
-                <div class="divider">
-                    <span></span>
-                    <p>Don't have an account?</p>
-                    <span></span>
-                </div>
-                <button class="sign-upbtn">SIGN UP</button>
-                <p class="sign-up">How to sign-up on My Eicher?</p>
-
-            </div>
+<div class="bg">
+  <div class="shadow">
+    <nav class="navbar">
+      <a class="navbar-brand">
+        <img class="my-eicher-logo" src="/assets/logo.svg" alt="My Eicher logo" />
+      </a>
+    </nav>
+    <div class="login-box">
+      <div class="welcome">
+        <h2>Welcome to My Eicher!</h2>
+        <p>Your connected Fleet Management System</p>
+      </div>
+      <div class="dropdown">
+        <select (change)="onRoleChange($event)">
+          <option value="Customer">Customers</option>
+          <option value="Dealer">Dealer</option>
+          <option value="VECV">VECV</option>
+        </select>
+      </div>
+      <div class="mobile">
+        <p>Login using your registered Mobile Number</p>
+        <label for="phone">Mobile Number:</label>
+        <div class="mobile-number">
+          <span>+91</span>
+          <input type="text" id="phone" placeholder="Enter your mobile number" />
         </div>
-
+        <button class="proceed">Proceed</button>
+      </div>
+      <div class="divider">
+        <span></span>
+        <p>Don't have an account?</p>
+        <span></span>
+      </div>
+      <button class="sign-upbtn">SIGN UP</button>
+      <p class="sign-up">How to sign-up on My Eicher?</p>
     </div>
-
-</body>
-
-</html>
+  </div>
+</div>
