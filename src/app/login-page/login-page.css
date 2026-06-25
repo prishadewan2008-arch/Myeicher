@@ -2,7 +2,43 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;  
-  /* background-image: url('/src/assets/bg 1.svg'); */
+}  
+
+.bg{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./../../assets/bg1.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* .logo{
+    width : 94px;
+    height : 94px;
+    position: absolute;
+    top : 48px;
+    left : 60px;
+    border-radius: 12.46px;
+
+} */
+
+.navbar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  padding: 15px;
+}
+.my-eicher-logo {
+   height: 80px;
+  width: 90px;
 }
 
 .login-box {
@@ -10,8 +46,6 @@
     flex-direction: column;
     width : 394px;
     height : 504px; 
-    padding-top : 198.5px;
-    padding-left : 986px;
     border-radius : 8px;
     padding : 32px;
     Gap : 16px;
@@ -20,7 +54,9 @@
     align-items: center;
     border-style: solid;
     border-color: rgba(255, 255, 255, 1);
-    /* background-image: url('/src/assets/bg1.svg'); */
+    position: absolute;
+    left: 986px;
+    top: 198.5px;
 }
 
 .welcome{
@@ -29,6 +65,21 @@
     width : 330px;
     height : 44px;
     gap : 8px;
+
+    p{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+    }
+
+    h2{
+    font-family: 'Roboto', sans-serif;
+    font-style: Bold;
+    font-size: 18px;
+    font-weight: 700;
+    color : rgba(7, 58, 129, 1);
+    }
 }
 
 .dropdown select{
@@ -46,6 +97,10 @@
     background-color: #FFFFFF;
     border-style: solid;
     border-color: rgba(209, 213, 219, 1);   
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
 }
 
 .mobile{
@@ -54,6 +109,14 @@
     width : 330px;
     height: 178px;
     gap : 24px;
+
+    p{
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        color: rgba(52, 57, 69, 1);
+    }
 }
 
 .mobile-number{
@@ -64,6 +127,10 @@
 .mobile label{
     display: block;
     margin-bottom: -13px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .mobile span{
@@ -77,6 +144,10 @@
     border-style: solid;
     border-color: rgba(209, 213, 219, 1);
     background-color: rgba(235, 235, 235, 1);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .mobile input{
@@ -89,6 +160,11 @@
     background-color: rgba(235, 235, 235, 1);
     border-style: solid;
     border-color: rgba(209, 213, 219, 1);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    
 }
 
 .proceed{
@@ -105,6 +181,11 @@
     box-shadow: rgba(0, 0, 0, 0.05);
     border-style: solid;
     border-color: rgba(237, 37, 65, 1);
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
 }
 
 .divider{
@@ -112,12 +193,20 @@
     flex-direction: row;
     width : 330px;
     height : 20px;
+
+    p{
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-size: 14px;
+        font-weight: 400;     
+        color: rgba(52, 57, 69, 1);
+    }
 }
 
 .divider span{
     flex : 1;
     height : 1px;
-    background: black;
+    background: rgba(52, 57, 69, 1);;
     margin-top: 10px;
 }
 
@@ -136,6 +225,11 @@
     border-color: #ED2541;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    font-size: 14px;
+    font-weight: 700;     
+    text-transform: uppercase;
 }
 
 .sign-up{
@@ -143,5 +237,9 @@
     flex-direction: row;
     width: 330px;
     height: 36px;
-
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 600;     
+    color: rgba(237, 37, 65, 1);
 } 
