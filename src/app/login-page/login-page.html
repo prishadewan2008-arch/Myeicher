@@ -1,5 +1,13 @@
 <div class="bg">
-  <div class="shadow"></div>
+  <!-- <div class="shadow"></div> -->
+
+  <div class="carousel">
+    <button (click)="prev()">Prev</button>
+    <img
+      [src]="images[currentIndex]"
+      alt="carousel image">
+      <button (click)="next()">Next</button>
+  </div>
 
   <nav class="navbar">
     <a class="navbar-brand">
@@ -9,35 +17,50 @@
 
   <div class="login-box">
     <div class="welcome">
-        <h2>Welcome to My Eicher!</h2>
-        <p>Your connected Fleet Management System</p>
+      <h2>Welcome to My Eicher!</h2>
+      <p>Your connected Fleet Management System</p>
+    </div>
+    <div class="dropdown">
+      <select [(ngModel)]="selectedRole" (ngModelChange)="onChange($event)" name="role">
+        <option value="Customer">Customers</option>
+        <option value="Dealer">Dealer</option>
+        <option value="VECV">VECV</option>
+      </select>
+    </div>
+    <div class="mobile" *ngIf="selectedRole==='Customer'">
+      <p>Login using your registered Mobile Number</p>
+      <label for="phone">Mobile Number:</label>
+      <div class="mobile-number">
+        <span>+91</span>
+        <input type="text" id="phone" placeholder="Enter your mobile number" />
       </div>
-      <div class="dropdown">
-        <select
-          [(ngModel)]="selectedRole"
-          (ngModelChange)="onRoleChange($event)"
-          name="role"
-        >
-          <option value="Customer">Customers</option>
-          <option value="Dealer">Dealer</option>
-          <option value="VECV">VECV</option>
-        </select>
+      <button class="proceed">Proceed</button>
+    </div>
+    <div class="divider" *ngIf="selectedRole==='Customer'">
+      <span></span>
+      <p>Don't have an account?</p>
+      <span></span>
+    </div>
+    <button class="sign-upbtn" *ngIf="selectedRole==='Customer'">SIGN UP</button>
+    <p class="sign-up" *ngIf="selectedRole==='Customer'">How to sign-up on My Eicher?</p>
+
+    <div class="userId" *ngIf="selectedRole==='Dealer'">
+      <label for="user">User ID</label>
+      <div>
+        <input type="text" id="user">
       </div>
-      <div class="mobile">
-        <p>Login using your registered Mobile Number</p>
-        <label for="phone">Mobile Number:</label>
-        <div class="mobile-number">
-          <span>+91</span>
-          <input type="text" id="phone" placeholder="Enter your mobile number" />
-        </div>
-        <button class="proceed">Proceed</button>
+    </div>
+    <div class="password" *ngIf="selectedRole==='Dealer'">
+      <label for="pass">Password</label>
+      <div>
+        <input type="password" id="pass">
       </div>
-      <div class="divider">
-        <span></span>
-        <p>Don't have an account?</p>
-        <span></span>
-      </div>
-      <button class="sign-upbtn">SIGN UP</button>
-      <p class="sign-up">How to sign-up on My Eicher?</p>
-  </div>
+    </div>
+    <div>
+      <p class="forgotPassword" *ngIf="selectedRole==='Dealer'">FORGOT PASSWORD</p>
+    </div>
+    <button class="logIn" *ngIf="selectedRole==='Dealer'">Log in →</button>
+    <p class="needHelp"  *ngIf="selectedRole==='Dealer'">Need help?</p> 
+
+    <button class="continue" *ngIf="selectedRole==='VECV'">Continue →</button>
 </div>

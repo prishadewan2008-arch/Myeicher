@@ -13,7 +13,7 @@
     background-repeat: no-repeat;
 }
 
-.shadow {
+/* .shadow {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@
     rgba(0, 0, 0, 0.3) 40%,
     rgba(0, 0, 0, 0) 100%
   );
-}
+} */
 
 .navbar {
   position: absolute;
@@ -67,6 +67,8 @@
     width : 330px;
     height : 44px;
     gap : 8px;
+    /* position: absolute;
+    top: 10px; */
 
     p{
         font-family: 'Roboto', sans-serif;
@@ -158,8 +160,7 @@
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 14px;
-    font-weight: 400;
-    
+    font-weight: 400;  
 }
 
 .proceed{
@@ -237,4 +238,140 @@
     font-size: 14px;
     font-weight: 600;     
     color: rgba(237, 37, 65, 1);
-} 
+}
+
+.userId label{
+    display: block;
+    margin-bottom: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.userId input{
+    width : 330px;
+    height : 40px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    background-color: rgba(235, 235, 235, 1);
+    border-style: solid;
+    border-color: rgba(209, 213, 219, 1);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;    
+}
+
+.password label{
+    display: block;
+    margin-bottom: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.password input{
+    width : 330px;
+    height : 40px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    background-color: rgba(235, 235, 235, 1);
+    border-style: solid;
+    border-color: rgba(209, 213, 219, 1);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.forgotPassword{
+    display : flex;
+    flex-direction: row;
+    width: 330px;
+    height: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 600;     
+    color: rgba(237, 37, 65, 1);
+    justify-content: end;
+}
+
+.logIn{
+    display : flex;
+    flex-direction: row;
+    width : 330px;
+    height : 42px;
+    border-radius: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: rgba(237, 37, 65, 1);
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.05);
+    border-style: solid;
+    border-color: rgba(237, 37, 65, 1);
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+}
+
+.needHelp{
+    display : flex;
+    flex-direction: row;
+    width: 330px;
+    height: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 600;     
+    color: rgba(237, 37, 65, 1);
+    text-decoration: underline;
+}
+
+.continue{
+    display : flex;
+    flex-direction: row;
+    width : 330px;
+    height : 42px;
+    border-radius: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: rgba(237, 37, 65, 1);
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.05);
+    border-style: solid;
+    border-color: rgba(237, 37, 65, 1);
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+}
+
+.carousel{
+    width:600px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+
+    img{
+    width:500px;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.5s ease-in-out;
+    }
+}
+
