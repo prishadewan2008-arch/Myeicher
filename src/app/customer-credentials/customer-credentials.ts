@@ -4,15 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login-page',
-  imports: [FormsModule, CommonModule],
-  templateUrl: './login-page.html',
-  styleUrl: './login-page.css',
+  selector: 'app-customer-credentials',
+  imports: [CommonModule, FormsModule],
+  templateUrl: './customer-credentials.html',
+  styleUrl: './customer-credentials.css',
 })
-export class LoginPage implements OnDestroy {
-  selectedRole = 'Customer';
+export class CustomerCredentials implements OnDestroy {
   mobileNumber = '';
-  mobileError = '';
+  username = '';
+  password = '';
+  errorMessage = '';
+
   currentIndex = signal(0);
   prevIndex = signal(0);
 
@@ -28,6 +30,13 @@ export class LoginPage implements OnDestroy {
 
   constructor(private router: Router) {
     afterNextRender(() => {
+      const mobile = history.state?.['mobile'] as string | undefined;
+      if (!mobile) {
+        this.router.navigate(['/']);
+        return;
+      }
+
+      this.mobileNumber = mobile;
       this.intervalId = setInterval(() => this.nextSlide(), 3000);
     });
   }
@@ -41,20 +50,20 @@ export class LoginPage implements OnDestroy {
     this.currentIndex.update((index) => (index + 1) % this.images.length);
   }
 
-  onProceed(): void {
-    const mobile = this.mobileNumber.trim();
-
-    if (!/^[6-9]\d{9}$/.test(mobile)) {
-      this.mobileError = 'Enter a valid 10-digit mobile number.';
+  onLogin(): void {
+    if (!this.username.trim() || !this.password.trim()) {
+      this.errorMessage = 'Please enter username and password.';
       return;
     }
 
-    this.mobileError = '';
-    this.router.navigate(['/customer-login'], { state: { mobile } });
+    this.errorMessage = '';
+    console.log('Customer login', {
+      mobile: this.mobileNumber,
+      username: this.username,
+    });
   }
 
-  onChange(event: string): void {
-    this.selectedRole = event;
-    this.mobileError = '';
+  goBack(): void {
+    this.router.navigate(['/']);
   }
 }

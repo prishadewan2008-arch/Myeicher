@@ -216,6 +216,14 @@
     font-weight: 400;  
 }
 
+.mobile-error {
+    margin-top: -12px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ed2541;
+}
+
 .proceed{
     display : flex;
     flex-direction: row;

@@ -38,9 +38,15 @@
           <label for="phone">Mobile Number:</label>
           <div class="mobile-number">
             <span>+91</span>
-            <input type="text" id="phone" placeholder="Enter your mobile number" />
+            <input
+              type="text"
+              id="phone"
+              [(ngModel)]="mobileNumber"
+              maxlength="10"
+              placeholder="Enter your mobile number" />
           </div>
-          <button class="proceed">Proceed</button>
+          <p class="mobile-error" *ngIf="mobileError">{{ mobileError }}</p>
+          <button type="button" class="proceed" (click)="onProceed()">Proceed</button>
         </div>
         <div class="divider">
           <span></span>
