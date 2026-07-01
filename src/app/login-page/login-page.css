@@ -13,21 +13,17 @@
     background-repeat: no-repeat;
 }
 
-/* .shadow {
+.shadow {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 100%;
+  width: 50vw;
+  height: 100vh;
   pointer-events: none;
-  z-index: 1;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0) 100%
-  );
-} */
+  z-index: 2;
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.12));
+
+}
 
 .navbar {
   position: absolute;
@@ -44,6 +40,7 @@
 }
 
 .login-box {
+    position: relative;
     display : flex;
     flex-direction: column;
     width : 394px;

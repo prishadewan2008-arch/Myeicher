@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+// import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-login-page',
   imports: [FormsModule, CommonModule],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
+  // providers: [NgbCarouselConfig]
 })
 export class LoginPage {
   selectedRole = 'Customer';
