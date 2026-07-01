@@ -3,7 +3,9 @@
     <div
       class="bg-slide"
       *ngFor="let img of images; let i = index"
-      [ngClass]="getSlideClass(i)"
+      [class.active]="currentIndex() === i"
+      [class.prev]="prevIndex() === i && prevIndex() !== currentIndex()"
+      [class.hidden]="currentIndex() !== i && (prevIndex() !== i || prevIndex() === currentIndex())"
       [style.background-image]="'url(' + img + ')'">
     </div>
   </div>

@@ -1,10 +1,4 @@
-import {
-  afterNextRender,
-  ChangeDetectorRef,
-  Component,
-  inject,
-  OnDestroy,
-} from '@angular/core';
+import { afterNextRender, Component, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,11 +9,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login-page.css',
 })
 export class LoginPage implements OnDestroy {
-  private readonly cdr = inject(ChangeDetectorRef);
-
   selectedRole = 'Customer';
-  currentIndex = 0;
-  prevIndex = 0;
+  currentIndex = signal(0);
+  prevIndex = signal(0);
 
   images = [
     'assets/bg1.svg',
@@ -33,28 +25,17 @@ export class LoginPage implements OnDestroy {
 
   constructor() {
     afterNextRender(() => {
-      this.intervalId = setInterval(() => {
-        this.nextSlide();
-        this.cdr.detectChanges();
-      }, 3000);
+      this.intervalId = setInterval(() => this.nextSlide(), 3000);
     });
   }
 
   ngOnDestroy(): void {
     clearInterval(this.intervalId);
-  }  nextSlide(): void {
-    this.prevIndex = this.currentIndex;
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
   }
 
-  getSlideClass(index: number): string {
-    if (index === this.currentIndex) {
-      return 'active';
-    }
-    if (index === this.prevIndex && this.prevIndex !== this.currentIndex) {
-      return 'prev';
-    }
-    return 'hidden';
+  nextSlide(): void {
+    this.prevIndex.set(this.currentIndex());
+    this.currentIndex.update((index) => (index + 1) % this.images.length);
   }
 
   onChange(event: string): void {
