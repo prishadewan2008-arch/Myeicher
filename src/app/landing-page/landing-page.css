@@ -1,0 +1,46 @@
+/* @import '../login-page/login-page.css'; */
+
+.page-container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 40px;
+    background-color: red;
+
+    nav{
+        display: flex;
+        gap: 30px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+}
+}
+
+.footer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    background-color: red;
+
+}
+
+.logoVECV {
+    display: flex;
+    width: 260px;
+    height: 50px;
+    /* position: absolute;
+    top: 60px;
+    left: 60px; */
+}

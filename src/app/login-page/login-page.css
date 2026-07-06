@@ -1,384 +1,7 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  
-}  
-
-.bg{
-    width: 100vw;
-    height: 100vh;
-    background-image: url('./../../assets/bg1.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 2;
-  background: linear-gradient(
-    to right,
-    rgba(18,18,18,0.88) 0%,
-    rgba(18,18,18,0.72) 35%,
-    rgba(18,18,18,0.45) 70%,
-    rgba(18,18,18,0) 100%
-  );
-}
-
-.navbar {
-  position: absolute;
-  top: 48px;
-  left: 60px;
-  z-index: 2;
-}
-
-.my-eicher-logo {
-  display: block;
-  width: 94px;
-  height: 94px;
-  border-radius: 12.46px;
-}
-
-.login-box {
-    position: relative;
-    display : flex;
-    flex-direction: column;
-    width : 394px;
-    height : 504px; 
-    border-radius : 8px;
-    padding : 32px;
-    Gap : 16px;
-    background-color: #FFFFFF;
-    justify-content: center; 
-    align-items: center;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 1);
-    position: absolute;
-    right: 5%;
-    top: 198.5px;
-    z-index: 2;
-}
-.welcome{
-    display : flex;
-    flex-direction: column;
-    width : 330px;
-    height : 44px;
-    gap : 8px;
-
-    p{
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 14px;
-    }
-
-    h2{
-    font-family: 'Roboto', sans-serif;
-    font-style: Bold;
-    font-size: 18px;
-    font-weight: 700;
-    color : rgba(7, 58, 129, 1);
-    }
-}
-
-.dropdown select{
-    display: block;
-    width : 330px;
-    height : 40px;
-    border-radius : 4px;
-    border : 1px solid rgba(209, 213, 219, 1);
-    padding: 12px 16px;
-    background-color: #FFFFFF;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
-    appearance: auto;
-}
-.mobile{
-    display : flex;
-    flex-direction: column;
-    width : 330px;
-    height: 178px;
-    gap : 24px;
-
-    p{
-        font-family: 'Roboto', sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        font-style: normal;
-        color: rgba(52, 57, 69, 1);
-    }
-}
-
-.mobile-number{
-    display : flex;
-}
-
-.mobile label{
-    display: block;
-    margin-bottom: -13px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.mobile span{
-    width : 57px;
-    height : 40px;
-    border-right: 1px;
-    padding-top: 12px;
-    padding-right: 16px;
-    padding-bottom: 12px;
-    padding-left: 16px;
-    border-style: solid;
-    border-color: rgba(209, 213, 219, 1);
-    background-color: rgba(235, 235, 235, 1);
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.mobile input{
-    width : 273px;
-    height : 40px;
-    padding-top: 12px;
-    padding-right: 16px;
-    padding-bottom: 12px;
-    padding-left: 16px;
-    background-color: rgba(235, 235, 235, 1);
-    border-style: solid;
-    border-color: rgba(209, 213, 219, 1);
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 400;  
-}
-
-.proceed{
-    display : flex;
-    flex-direction: row;
-    width : 330px;
-    height : 42px;
-    border-radius: 4px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: rgba(237, 37, 65, 1);
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.05);
-    border-style: solid;
-    border-color: rgba(237, 37, 65, 1);
-    font-family: 'Roboto', sans-serif;
-    font-style: bold;
-    font-size: 14px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 1);
-}
-
-.divider{
-    display : flex;
-    flex-direction: row;
-    width : 330px;
-    height : 20px;
-
-    p{
-        font-family: 'Roboto', sans-serif;
-        font-style: normal;
-        font-size: 14px;
-        font-weight: 400;     
-        color: rgba(52, 57, 69, 1);
-    }
-}
-
-.divider span{
-    flex : 1;
-    height : 1px;
-    background: rgba(52, 57, 69, 1);;
-    margin-top: 10px;
-}
-
-.sign-upbtn{
-    display : flex;
-    flex-direction: row;
-    width : 330px;
-    height : 42px;
-    border-radius: 4px;
-    border: 1px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: #FFFFFF;
-    color: #ED2541;
-    border-style: solid;
-    border-color: #ED2541;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    font-style: bold;
-    font-size: 14px;
-    font-weight: 700;     
-    text-transform: uppercase;
-}
-
-.sign-up{
-    display : flex;
-    flex-direction: row;
-    width: 330px;
-    height: 36px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 600;     
-    color: rgba(237, 37, 65, 1);
-}
-
-.userId label{
-    display: block;
-    margin-bottom: 4px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.userId input{
-    width : 330px;
-    height : 40px;
-    padding-top: 12px;
-    padding-right: 16px;
-    padding-bottom: 12px;
-    padding-left: 16px;
-    background-color: rgba(235, 235, 235, 1);
-    border-style: solid;
-    border-color: rgba(209, 213, 219, 1);
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 400;    
-}
-
-.password label{
-    display: block;
-    margin-bottom: 4px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.password input{
-    width : 330px;
-    height : 40px;
-    padding-top: 12px;
-    padding-right: 16px;
-    padding-bottom: 12px;
-    padding-left: 16px;
-    background-color: rgba(235, 235, 235, 1);
-    border-style: solid;
-    border-color: rgba(209, 213, 219, 1);
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.forgotPassword{
-    display : flex;
-    flex-direction: row;
-    width: 330px;
-    height: 36px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 600;     
-    color: rgba(237, 37, 65, 1);
-    justify-content: end;
-}
-
-.logIn{
-    display : flex;
-    flex-direction: row;
-    width : 330px;
-    height : 42px;
-    border-radius: 4px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: rgba(237, 37, 65, 1);
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.05);
-    border-style: solid;
-    border-color: rgba(237, 37, 65, 1);
-    font-family: 'Roboto', sans-serif;
-    font-style: bold;
-    font-size: 14px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 1);
-}
-
-.needHelp{
-    display : flex;
-    flex-direction: row;
-    width: 330px;
-    height: 36px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 600;     
-    color: rgba(237, 37, 65, 1);
-    text-decoration: underline;
-}
-
-.continue{
-    display : flex;
-    flex-direction: row;
-    width : 330px;
-    height : 42px;
-    border-radius: 4px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: rgba(237, 37, 65, 1);
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.05);
-    border-style: solid;
-    border-color: rgba(237, 37, 65, 1);
-    font-family: 'Roboto', sans-serif;
-    font-style: bold;
-    font-size: 14px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 1);
-}
-
-.carousel{
-    width:600px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-
-    img{
-    width:500px;
-    height:300px;
-    object-fit:cover;
-    border-radius:10px;
-    transition:0.5s ease-in-out;
-    }
-}
- */
-
- * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;  
+  box-sizing: border-box; 
 }  
 
 .bg {
@@ -393,6 +16,9 @@
     inset: 0;
     z-index: 0;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .bg-slide {
@@ -491,6 +117,7 @@
 .field-hidden {
     display: none;
 }
+
 .welcome{
     display : flex;
     flex-direction: column;
@@ -661,6 +288,12 @@
     font-size: 14px;
     font-weight: 700;     
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+.sign-upbtn:disabled{
+    opacity: 0.5;             
+    cursor: not-allowed;
 }
 
 .sign-up{
@@ -757,11 +390,12 @@
     font-size: 14px;
     font-weight: 700;
     color: rgba(255, 255, 255, 1);
+    cursor: pointer;
 }
 
 .logIn:disabled{
     opacity: 0.5;             
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
 
 .needHelp{
@@ -775,6 +409,7 @@
     font-weight: 600;     
     color: rgba(237, 37, 65, 1);
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .continue{
@@ -796,6 +431,7 @@
     font-size: 14px;
     font-weight: 700;
     color: rgba(255, 255, 255, 1);
+    cursor: pointer;
 }
 
 .carousel{
