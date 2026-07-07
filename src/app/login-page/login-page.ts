@@ -59,35 +59,48 @@ export class LoginPage implements OnDestroy {
   }
 
   onLogin(): void {
-    this.router.navigate(['/dealer-login']);
-    // this.authService.login(this.email, this.password)
-    //   .then(() => {
-    //     console.log("Login successful");
-    //   })
-    //   .catch(err => {
-    //     this.errorMsg = err.message;
-    //   });
+    const email = this.userIdControl.value?.trim() ?? '';
+    const password = this.passwordControl.value ?? '';
 
-    this.authService.login(this.email, this.password)
-    .then(() => {
-      console.log("Login successful");
-    })
-    .catch(err => {
-      console.log(err.code);
-      console.log(err.message);
-    });
+    this.errorMsg = '';
 
-  // this.authService.register(this.email, this.password)
-  //   .then((userCredential) => {
-  //     console.log("User created:", userCredential.user);
+    if (!email || !password) {
+      this.errorMsg = 'Please enter User ID and password.';
+      return;
+    }
 
-  //     // redirect after signup
-  //     this.router.navigate(['/login']);
-  //   })
-  //   .catch(err => {
-  //     console.log(err.message);
-  //   });
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      this.errorMsg =
+        'Firebase login requires an email address (e.g. dealer@example.com), not a plain User ID.';
+      return;
+    }
 
+    this.authService
+      .login(email, password)
+      .then(() => {
+        this.router.navigate(['/dealer-login']);
+      })
+      .catch((err: { code?: string; message?: string }) => {
+        console.error('Firebase login failed:', err.code, err.message);
+        this.errorMsg = this.getAuthErrorMessage(err.code ?? '');
+      });
+  }
+
+  private getAuthErrorMessage(code: string): string {
+    switch (code) {
+      case 'auth/invalid-email':
+        return 'Invalid email format.';
+      case 'auth/invalid-credential':
+      case 'auth/user-not-found':
+      case 'auth/wrong-password':
+        return 'Wrong email or password. Create this user in Firebase Console first.';
+      case 'auth/operation-not-allowed':
+        return 'Email/Password sign-in is disabled. Enable it in Firebase Console → Authentication → Sign-in method.';
+      case 'auth/too-many-requests':
+        return 'Too many attempts. Wait a few minutes and try again.';
+      default:
+        return `Login failed (${code || 'unknown error'}).`;
+    }
   }
 
   onContinue(): void{
@@ -99,17 +112,16 @@ export class LoginPage implements OnDestroy {
     this.mobileError = '';
   }
 
-  userIdControl = new FormControl('',[
+  userIdControl = new FormControl('', [
     Validators.required,
-  ])
+    Validators.email,
+  ]);
 
   passwordControl = new FormControl('', [
     Validators.required,
-    Validators.pattern('^[A-Za-z0-9@$!%*?&]{6,}$')
-  ])
-  email = '';
-  password = '';
-  errorMsg = '';
+    Validators.pattern('^[A-Za-z0-9@$!%*?&]{6,}$'),
+  ]);
 
+  errorMsg = '';
 }
 

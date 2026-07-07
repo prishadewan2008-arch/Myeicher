@@ -59,10 +59,17 @@
 
       <div class="role-panel" [class.field-hidden]="selectedRole !== 'Dealer'">
         <div class="userId">
-          <label for="user">User ID</label>
+          <label for="user">Email</label>
           <div>
-            <input type="text" id="user" placeholder="Enter your User Id" [formControl]="userIdControl">
+            <input
+              type="email"
+              id="user"
+              placeholder="dealer@example.com"
+              [formControl]="userIdControl" />
           </div>
+          <p class="field-hint" *ngIf="userIdControl.touched && userIdControl.hasError('email')">
+            Enter a valid email address.
+          </p>
         </div>
         <div class="password">
           <label for="pass">Password</label>
@@ -71,6 +78,7 @@
           </div>
         </div>
         <p class="forgotPassword">FORGOT PASSWORD</p>
+        <p class="mobile-error" *ngIf="errorMsg">{{ errorMsg }}</p>
         <button class="logIn" (click)="onLogin()" [disabled]="userIdControl.invalid || passwordControl.invalid">Log in →</button>
         <p class="needHelp">Need help?</p>
       </div>

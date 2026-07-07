@@ -118,6 +118,19 @@
     display: none;
 }
 
+.mobile-error,
+.field-hint {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ed2541;
+}
+
+.field-hint {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
 .welcome{
     display : flex;
     flex-direction: column;
