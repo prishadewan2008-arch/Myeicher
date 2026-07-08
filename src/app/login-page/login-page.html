@@ -1,9 +1,6 @@
 <div class="bg">
   <div class="bg-slides">
-    <div
-      class="bg-slide"
-      *ngFor="let img of images; let i = index"
-      [class.active]="currentIndex() === i"
+    <div class="bg-slide" *ngFor="let img of images; let i = index" [class.active]="currentIndex() === i"
       [class.prev]="prevIndex() === i && prevIndex() !== currentIndex()"
       [class.hidden]="currentIndex() !== i && (prevIndex() !== i || prevIndex() === currentIndex())"
       [style.background-image]="'url(' + img + ')'">
@@ -38,11 +35,7 @@
           <label for="phone">Mobile Number:</label>
           <div class="mobile-number">
             <span>+91</span>
-            <input
-              type="text"
-              id="phone"
-              [(ngModel)]="mobileNumber"
-              maxlength="10"
+            <input type="text" id="phone" [(ngModel)]="mobileNumber" maxlength="10"
               placeholder="Enter your mobile number" />
           </div>
           <p class="mobile-error" *ngIf="mobileError">{{ mobileError }}</p>
@@ -61,11 +54,7 @@
         <div class="userId">
           <label for="user">Email</label>
           <div>
-            <input
-              type="email"
-              id="user"
-              placeholder="dealer@example.com"
-              [formControl]="userIdControl" />
+            <input type="email" id="user" placeholder="dealer@example.com" [formControl]="userIdControl"/>
           </div>
           <p class="field-hint" *ngIf="userIdControl.touched && userIdControl.hasError('email')">
             Enter a valid email address.
@@ -79,8 +68,20 @@
         </div>
         <p class="forgotPassword">FORGOT PASSWORD</p>
         <p class="mobile-error" *ngIf="errorMsg">{{ errorMsg }}</p>
-        <button class="logIn" (click)="onLogin()" [disabled]="userIdControl.invalid || passwordControl.invalid">Log in →</button>
+        <button class="logIn" (click)="onLogin()" [disabled]="userIdControl.invalid || passwordControl.invalid">Log in
+          →</button>
         <p class="needHelp">Need help?</p>
+
+        <div class="pop-upOverlay">
+          <div class="pop-up" *ngIf="showErrorPopup">
+            <h4>Error</h4>
+            <img src="./../../assets/cross.png" alt="error">
+            <p>Invalid credentials. Please enter valid email and password.</p>
+            <button class="pop-upbtn" (click)="showErrorPopup = false">OK</button>
+
+          </div>
+
+        </div>
       </div>
 
       <div class="role-panel" [class.field-hidden]="selectedRole !== 'VECV'">

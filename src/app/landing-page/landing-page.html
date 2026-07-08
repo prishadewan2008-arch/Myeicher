@@ -5,13 +5,64 @@
         </div>
 
         <nav>
-            <a href="">Our Services</a>
-            <a href="">Products</a>
-            <a href="">About</a>
-            <a href="">Contact</a>
+            <a href="javascript:void(0)" (click)="ourServices()">Our Services ↓</a>
+            <a href="javascript:void(0)" (click)="help()">Help and Support ↓</a>
+            <a>My subscriptions</a>
+            <a>My notifications</a>
         </nav>
+        <input class="search" type="text">
 
     </header>
+
+    <div class="our-services" *ngIf="showOurServices">
+        <div class="heading">
+            <h2>Eicher Services</h2>
+        </div>
+        <div class="services">
+            <div class="our-services-left">
+            <div class="frequently-used">
+                <h4>Frequently Used</h4>
+                <p>My Sites</p>
+            </div>
+            <div class="video-tut">
+                <h4>Video Tutorials</h4>
+                <p>Step-by-step feature guides</p>
+                <h5>Watch Now →</h5>
+            </div>
+            <div class="explore">
+                <h4>Explore FAQs →</h4>
+                <p>Help with common queries</p>
+            </div>
+        </div>
+        <div class="our-services-right">
+            <div class="fleet-tracking">
+                <h4>Fleet Tracking</h4>
+                <p>Location sharing</p>
+                <div class="my-organisation">
+                <h4>My Organisation</h4>
+                <p>Manage Team</p>
+                <p>My site</p>
+                <p>My Documents</p>
+            </div>
+        </div>
+            <div class="alerts">
+                <h4>Alerts</h4>
+                <p>My alerts</p>
+            </div>
+            <div class="smart-sol">
+                <h4>Smart Solutions</h4>
+                <p>API Service</p>
+                <p>VLTD & AIS 140 Certification</p>
+                <p>VLTD Certificate</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="help" *ngIf="showHelp">
+        <p>Help & Support</p>
+        <p>Service Request</p>
+    </div>
 
     <footer class="footer">
         <div class="logoVECV">

@@ -69,6 +69,7 @@ export class DealerCredentials {
   onSignIn(){
     this.router.navigate(['/landing-page']);
   }
+  
 
   
 }

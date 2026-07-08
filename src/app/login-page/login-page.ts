@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-page',
@@ -29,7 +30,8 @@ export class LoginPage implements OnDestroy {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private http: HttpClient
   ) {
     afterNextRender(() => {
       this.intervalId = setInterval(() => this.nextSlide(), 3000);
@@ -58,6 +60,8 @@ export class LoginPage implements OnDestroy {
     this.router.navigate(['/customer-login'], { state: { mobile } });
   }
 
+  showErrorPopup = false;
+
   onLogin(): void {
     const email = this.userIdControl.value?.trim() ?? '';
     const password = this.passwordControl.value ?? '';
@@ -75,14 +79,39 @@ export class LoginPage implements OnDestroy {
       return;
     }
 
-    this.authService
-      .login(email, password)
-      .then(() => {
-        this.router.navigate(['/dealer-login']);
-      })
+    this.authService.login(
+    email,
+    password,
+    this.selectedRole
+  )
+  .then(() => {
+
+    console.log("Login successful");
+
+    if(this.selectedRole === 'Dealer') {
+      this.router.navigate(['/dealer-login']);
+    }
+
+    else if(this.selectedRole === 'customer') {
+      this.router.navigate(['/customer-login']);
+    }
+
+    else if(this.selectedRole === 'vecv') {
+      this.router.navigate(['/vecv-login']);
+    }
+
+  })
       .catch((err: { code?: string; message?: string }) => {
-        console.error('Firebase login failed:', err.code, err.message);
-        this.errorMsg = this.getAuthErrorMessage(err.code ?? '');
+        if (
+          err.code === 'auth/invalid-credential' ||
+          err.code === 'auth/user-not-found' ||
+          err.code === 'auth/wrong-password'
+        ) {
+          this.showErrorPopup = true;
+        }
+        
+        console.log(err.message);
+    this.errorMsg = err.message || 'Login failed.';
       });
   }
 
@@ -103,7 +132,7 @@ export class LoginPage implements OnDestroy {
     }
   }
 
-  onContinue(): void{
+  onContinue(): void {
     this.router.navigate(['/vecv-login']);
   }
 
@@ -123,5 +152,9 @@ export class LoginPage implements OnDestroy {
   ]);
 
   errorMsg = '';
+
+  onOK(): void {
+    this.router.navigate(['/dealer-login']);
+  }
 }
 

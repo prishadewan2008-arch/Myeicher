@@ -12,11 +12,16 @@
     flex-direction: row;
     align-items: center;
     padding: 0 40px;
-    background-color: red;
+    background-color: rgb(220, 7, 7);
+    gap: 14px;
 
     nav{
         display: flex;
         gap: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-size: 14px;
+        font-weight: 400;
     }
 
     nav a {
@@ -32,8 +37,9 @@
     justify-content: flex-start;
     align-items: center;
     height: 70px;
-    background-color: red;
-
+    background-color: rgb(228, 228, 228);
+    padding-left: 50px;
+    gap: 700px;
 }
 
 .logoVECV {
@@ -43,4 +49,113 @@
     /* position: absolute;
     top: 60px;
     left: 60px; */
+}
+
+.our-services{
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    h2{
+        color: rgb(0, 0, 94);
+        padding-left: 40px;
+     }
+    border-radius: 4px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.heading{
+    box-sizing: border-box;
+    border-color: white;
+    background-color: white;
+}
+
+.services{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.our-services-right{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    h4{
+        color: rgb(0, 0, 94);
+     }
+    p{
+        color: grey;
+     } 
+}
+
+.our-services-left{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgb(225, 222, 222);
+}
+
+.frequently-used{
+    box-sizing: border-box;
+    border-radius: 16px;
+    border-color: white;
+    background-color: white;
+    margin: 10px;
+    padding-left: 20px;
+    h4{
+        color: rgb(0, 0, 94);
+     }
+    p{
+        font-size: 14px;
+    }
+}
+
+.video-tut{
+    box-sizing: border-box;
+    border-radius: 16px;
+    border-color: white;
+    background-color: white;
+    margin: 10px;
+    padding-left: 20px;
+    p{
+        color: grey;
+    }
+    h5{
+        color: rgb(8, 36, 247);
+    }
+}
+
+.explore{
+    box-sizing: border-box;
+    border-radius: 16px;
+    border-color: white;
+    background-color: white;
+    margin: 10px;
+    padding-left: 20px;
+    h4{
+        color: rgb(0, 0, 94);
+        font-weight: 400;
+    }
+    p{
+        color: grey;
+        font-size: 14px;
+    }
+
+}
+
+.help{
+    box-sizing: border-box;
+    border-radius: 4px;
+    border-color: white;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-left: 260px;
+    margin-right: 900px;
+    padding-left: 10px;
+    p{
+        color: grey;
+        font-size: 14px;
+    }
 }
