@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from './../services/data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,22 +9,22 @@ import { DataService } from './../services/data';
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
 })
-export class LandingPage implements OnInit {
+export class LandingPage {
 
-  private dataService = inject(DataService);
+  // private dataService = inject(DataService);
 
-  ngOnInit() {
-    // 2. Call the method and subscribe to the data stream
-    this.dataService.getPosts().subscribe({
-      next: (data) => {
-        // 3. Print the data to the console
-        console.log('Received posts data:', data);
-      },
-      error: (error) => {
-        console.error('Something went wrong:', error);
-      }
-    });
-  }
+  // ngOnInit() {
+  //   // 2. Call the method and subscribe to the data stream
+  //   this.dataService.getPosts().subscribe({
+  //     next: (data) => {
+  //       // 3. Print the data to the console
+  //       console.log('Received posts data:', data);
+  //     },
+  //     error: (error) => {
+  //       console.error('Something went wrong:', error);
+  //     }
+  //   });
+  // }
   showOurServices = false;
   showHelp = false;
   ourServices(){
@@ -32,5 +33,22 @@ export class LandingPage implements OnInit {
 
   help(){
     this.showHelp = !this.showHelp;
+  }
+
+  data: any[] = [];
+
+  constructor(
+    private router: Router,
+    private menuService: DataService){}
+
+  ngOnInit(){
+    this.menuService.getMenu().subscribe(data => {
+      this.data = data;
+      console.log(this.data);
+    });
+  }
+
+  showAlerts(){
+    this.router.navigate(['/alerts']);
   }
 }

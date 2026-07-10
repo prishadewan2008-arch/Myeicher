@@ -1,0 +1,8 @@
+<p>alerts works!</p>
+<div *ngFor="let section of data">
+  <h3>{{ section.title }}</h3>
+
+  <div *ngFor="let item of section.items">
+    {{ item.name }}
+  </div>
+</div>

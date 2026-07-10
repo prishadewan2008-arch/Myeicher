@@ -88,6 +88,12 @@
      } 
 }
 
+.alerts{
+    p{
+        cursor: pointer;
+    }
+}
+
 .our-services-left{
     display: flex;
     flex-direction: column;

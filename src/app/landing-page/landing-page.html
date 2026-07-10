@@ -1,4 +1,5 @@
 <div class="page-container">
+
     <header class="header">
         <div class="logo">
             <img src="./../../assets/logo.svg" alt="Logo">
@@ -9,6 +10,7 @@
             <a href="javascript:void(0)" (click)="help()">Help and Support ↓</a>
             <a>My subscriptions</a>
             <a>My notifications</a>
+            
         </nav>
         <input class="search" type="text">
 
@@ -35,7 +37,14 @@
             </div>
         </div>
         <div class="our-services-right">
-            <div class="fleet-tracking">
+            <div *ngFor="let x of data">
+  <h3>{{ x.title }}</h3>
+
+  <div *ngFor="let item of x.items">
+    {{ item.name }}
+  </div>
+</div>
+            <!-- <div class="fleet-tracking">
                 <h4>Fleet Tracking</h4>
                 <p>Location sharing</p>
                 <div class="my-organisation">
@@ -47,7 +56,7 @@
         </div>
             <div class="alerts">
                 <h4>Alerts</h4>
-                <p>My alerts</p>
+                <p (click)="showAlerts()">My alerts</p>
             </div>
             <div class="smart-sol">
                 <h4>Smart Solutions</h4>
@@ -57,12 +66,12 @@
             </div>
         </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="help" *ngIf="showHelp">
         <p>Help & Support</p>
         <p>Service Request</p>
-    </div>
+    </div> 
 
     <footer class="footer">
         <div class="logoVECV">

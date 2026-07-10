@@ -1,7 +1,7 @@
 // data.service.ts
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 // 1. Define your data structure
 export interface Post {
@@ -15,12 +15,104 @@ export interface Post {
 })
 export class DataService {
   // 2. Inject HttpClient using the modern inject() function
-  private http = inject(HttpClient); 
-  private apiUrl = 'https://fake-json-api.mock.beeceptor.com/users';
+  // private http = inject(HttpClient); 
+  // private apiUrl = 'https://fake-json-api.mock.beeceptor.com/users';
 
-  // 3. Create a method that returns an Observable
-  getPosts(): Observable<Post[]> {
-    console.log(this.http.get<Post[]>(this.apiUrl), "API response");
-    return this.http.get<Post[]>(this.apiUrl);
+  // // 3. Create a method that returns an Observable
+  // getPosts(): Observable<Post[]> {
+  //   console.log(this.http.get<Post[]>(this.apiUrl), "API response");
+  //   return this.http.get<Post[]>(this.apiUrl);
+  // }
+
+  constructor() {}
+
+  private data = [
+  {
+    "title": "Fleet Tracking",
+    "items": [
+      { "name": "Track", "route": "/track" },
+      { "name": "Location Sharing", "route": "/location-sharing" }
+    ]
+  },
+  {
+    "title": "My Organization",
+    "items": [
+      { "name": "My Fleet", "route": "/my-fleet" },
+      { "name": "Manage Team", "route": "/manage-team" },
+      { "name": "My Site", "route": "/my-site" },
+      { "name": "My POI", "route": "/my-poi" },
+      { "name": "My Routes", "route": "/my-routes" },
+      { "name": "My Documents", "route": "/my-documents" },
+      { "name": "Manage Groups", "route": "/manage-groups" }
+    ]
+  },
+  {
+    "title": "Uptime Management",
+    "items": [
+      { "name": "Fleet Health", "route": "/fleet-health" },
+      { "name": "Uptime Management", "route": "/uptime-management" }
+    ]
+  },
+  {
+    "title": "Fleet Monitoring",
+    "items": [
+      { "name": "My Dashboard", "route": "/dashboard" },
+      { "name": "Fleet Insights", "route": "/fleet-insights" },
+      { "name": "Performance Comparison", "route": "/performance-comparison" },
+      { "name": "Hotspot Zone", "route": "/hotspot-zone" }
+    ]
+  },
+  {
+    "title": "Alerts",
+    "items": [
+      { "name": "My Alerts", "route": "/alerts" },
+      { "name": "Alert Dashboard", "route": "/alert-dashboard" }
+    ]
+  },
+  {
+    "title": "Fuel Management",
+    "items": [
+      { "name": "Fuel Refill & Drain", "route": "/fuel-refill-drain" },
+      { "name": "Fuel Graph", "route": "/fuel-graph" },
+      { "name": "Charging Summary", "route": "/charging-summary" },
+      { "name": "Charge & Discharge Graph", "route": "/charge-discharge-graph" },
+      { "name": "Charging Station Locator", "route": "/charging-station-locator" }
+    ]
+  },
+  {
+    "title": "Trip Management",
+    "badge": "Beta",
+    "items": [
+      { "name": "Route & Trip Insights", "route": "/route-trip-insights" },
+      { "name": "Hub Route Report", "route": "/hub-route-report" },
+      { "name": "Location Geofence", "route": "/location-geofence" },
+      { "name": "Route Geofence", "route": "/route-geofence" }
+    ]
+  },
+  {
+    "title": "Reports",
+    "items": [
+      { "name": "Monthly Report", "route": "/monthly-report" },
+      { "name": "Tipper Report", "route": "/tipper-report" },
+      { "name": "Reports", "route": "/reports" }
+    ]
+  },
+  {
+    "title": "Smart Solutions",
+    "items": [
+      { "name": "API Service", "route": "/api-service" },
+      { "name": "VLTD & AIS 140 Certification", "route": "/vltd-ais140" },
+      { "name": "VLTD Certificate", "route": "/vltd-certificate" },
+      { "name": "DSMS", "route": "/dsms" },
+      { "name": "Vehicle Immobilizer", "route": "/vehicle-immobilizer" },
+      { "name": "Digital Lock", "route": "/digital-lock" },
+      { "name": "Cargo Monitoring", "route": "/cargo-monitoring" }
+    ]
   }
+]
+
+getMenu(): Observable<any[]> {
+  return of(this.data);
+
+}
 }

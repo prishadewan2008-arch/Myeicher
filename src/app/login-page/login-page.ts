@@ -1,4 +1,4 @@
-import { afterNextRender, Component, OnDestroy, signal } from '@angular/core';
+import { afterNextRender, Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -156,5 +156,37 @@ export class LoginPage implements OnDestroy {
   onOK(): void {
     this.router.navigate(['/dealer-login']);
   }
+
+  activeIndex = 0;
+
+steps = [
+  {
+    title: 'LIVE TRACKING',
+    description: 'Real-time vehicle location and trip visibility',
+    icon: 'assets/icon1.svg'
+  },
+  {
+    title: 'FUEL REFILL & DRAIN',
+    description: 'Track fuel filled and detect theft',
+    icon: 'assets/icon2.svg'
+  },
+  {
+    title: 'PREDICTIVE UPTIME',
+    description: 'Predicts potential breakdowns in advance',
+    icon: 'assets/icon3.svg'
+  },
+  {
+    title: 'MY ALERTS',
+    description: 'Alerts for driving behaviour',
+    icon: 'assets/icon4.png'
+  },
+  {
+    title: 'DRIVER STATE MONITORING',
+    description: 'Detects driver fatigue',
+    icon: 'assets/icon5.svg'
+  }
+];
+
+
 }
 
