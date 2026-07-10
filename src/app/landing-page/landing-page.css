@@ -79,19 +79,32 @@
 .our-services-right{
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 16px;
     h4{
         color: rgb(0, 0, 94);
      }
     p{
         color: grey;
+        font-size: 12px;
      } 
+}
+
+.fleet-tracking{
+    display: flex;
+    flex-direction: column;
+}
+
+.fleet-monitoring{
+    display: flex;
+    flex-direction: column;
 }
 
 .alerts{
     p{
         cursor: pointer;
     }
+    display: flex;
+    
 }
 
 .our-services-left{

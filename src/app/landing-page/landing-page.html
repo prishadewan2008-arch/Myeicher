@@ -1,50 +1,89 @@
 <div class="page-container">
+  <header class="header">
+    <div class="logo">
+      <img src="./../../assets/logo.svg" alt="Logo" />
+    </div>
 
-    <header class="header">
-        <div class="logo">
-            <img src="./../../assets/logo.svg" alt="Logo">
+    <nav>
+      <a href="javascript:void(0)" (click)="ourServices()">Our Services ↓</a>
+      <a href="javascript:void(0)" (click)="help()">Help and Support ↓</a>
+      <a>My subscriptions</a>
+      <a>My notifications</a>
+    </nav>
+    <input class="search" type="text" />
+  </header>
+
+  <div class="our-services" *ngIf="showOurServices">
+    <div class="heading">
+      <h2>Eicher Services</h2>
+    </div>
+    <div class="services">
+      <div class="our-services-left">
+        <div class="frequently-used">
+          <h4>Frequently Used</h4>
+          <p>My Sites</p>
         </div>
-
-        <nav>
-            <a href="javascript:void(0)" (click)="ourServices()">Our Services ↓</a>
-            <a href="javascript:void(0)" (click)="help()">Help and Support ↓</a>
-            <a>My subscriptions</a>
-            <a>My notifications</a>
-            
-        </nav>
-        <input class="search" type="text">
-
-    </header>
-
-    <div class="our-services" *ngIf="showOurServices">
-        <div class="heading">
-            <h2>Eicher Services</h2>
+        <div class="video-tut">
+          <h4>Video Tutorials</h4>
+          <p>Step-by-step feature guides</p>
+          <h5>Watch Now →</h5>
         </div>
-        <div class="services">
-            <div class="our-services-left">
-            <div class="frequently-used">
-                <h4>Frequently Used</h4>
-                <p>My Sites</p>
-            </div>
-            <div class="video-tut">
-                <h4>Video Tutorials</h4>
-                <p>Step-by-step feature guides</p>
-                <h5>Watch Now →</h5>
-            </div>
-            <div class="explore">
-                <h4>Explore FAQs →</h4>
-                <p>Help with common queries</p>
-            </div>
+        <div class="explore">
+          <h4>Explore FAQs →</h4>
+          <p>Help with common queries</p>
         </div>
-        <div class="our-services-right">
-            <div *ngFor="let x of data">
+      </div>
+      <div class="our-services-right">
+        <div *ngFor="let x of data">
+          <div class="fleet-tracking" *ngIf="x.title === 'Fleet Tracking'">
+            <h4>{{ x.title }}</h4>
+            <p *ngFor="let item of x.items">{{ item.name }}</p>
+            <div class="uptime-management" *ngIf="x.title === 'Uptime Management'">
+            <h4>{{ x.title }}</h4>
+            <p *ngFor="let item of x.items">{{ item.name }}</p>
+            </div>
+          </div>
+
+          <div class="fleet-monitoring" *ngIf="x.title === 'Fleet Monitoring'">
+            <h4>{{ x.title }}</h4>
+            <p *ngFor="let item of x.items">{{ item.name }}</p>
+            <div class="alerts" *ngIf="x.title === 'Alerts'">
+            <h4>{{ x.title }}</h4>
+            <p *ngFor="let item of x.items">{{ item.name }}</p>
+          </div>
+
+          </div>
+
+          <div class="fuel-management" *ngIf="x.title === 'Fuel Management'">
+            <h4>{{ x.title }}</h4>
+            <p *ngFor="let item of x.items">{{ item.name }}</p>
+          </div>
+
+          <div class="trip-management" *ngIf="x.title === 'Trip Management'">
+            <h4>{{ x.title }}</h4>
+            <p *ngFor="let item of x.items">{{ item.name }}</p>
+          </div>
+
+          <div class="Reports" *ngIf="x.title === 'Reports'">
+            <h4>{{ x.title }}</h4>
+            <p *ngFor="let item of x.items">{{ item.name }}</p>
+          </div>
+
+          <div class="smart-sol" *ngIf="x.title === 'Smart Solutions'">
+            <h4>{{ x.title }}</h4>
+            <p *ngFor="let item of x.items">{{ item.name }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div *ngFor="let x of data">
   <h3>{{ x.title }}</h3>
 
   <div *ngFor="let item of x.items">
     {{ item.name }}
   </div>
-</div>
-            <!-- <div class="fleet-tracking">
+</div> -->
+
+      <!-- <div class="fleet-tracking">
                 <h4>Fleet Tracking</h4>
                 <p>Location sharing</p>
                 <div class="my-organisation">
@@ -68,15 +107,16 @@
         </div>
     </div> -->
 
-    <div class="help" *ngIf="showHelp">
+      <div class="help" *ngIf="showHelp">
         <p>Help & Support</p>
         <p>Service Request</p>
-    </div> 
-
-    <footer class="footer">
-        <div class="logoVECV">
-            <img src="./../../assets/logoVECV.jpeg" alt="Logo">
-        </div>
-        <p>© 2026 Eicher. All Rights Reserved.</p>
-    </footer>
+      </div>
+    </div>
+  </div>
 </div>
+<footer class="footer">
+  <div class="logoVECV">
+    <img src="./../../assets/logoVECV.jpeg" alt="Logo" />
+  </div>
+  <p>© 2026 Eicher. All Rights Reserved.</p>
+</footer>
