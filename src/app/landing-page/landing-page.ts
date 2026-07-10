@@ -36,19 +36,34 @@ export class LandingPage {
   }
 
   data: any[] = [];
+  menuColumns: any[][] = [];
+
 
   constructor(
     private router: Router,
     private menuService: DataService){}
 
   ngOnInit(){
-    this.menuService.getMenu().subscribe(data => {
-      this.data = data;
-      console.log(this.data);
-    });
-  }
+
+  this.menuService.getMenu().subscribe(data => {
+
+    this.data = data;
+
+    this.menuColumns = [
+      [this.data[0], this.data[1]],
+      [this.data[2], this.data[3], this.data[4]],
+      [this.data[5], this.data[6], this.data[7]],
+      [this.data[8]]
+    ];
+
+    console.log(this.menuColumns);
+  });
+
+}
 
   showAlerts(){
     this.router.navigate(['/alerts']);
   }
+
+  
 }

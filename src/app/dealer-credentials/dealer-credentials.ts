@@ -3,7 +3,7 @@ import { afterNextRender, Component, signal } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth';
-
+import { Firestore, collection, query, where, getDocs } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-dealer-credentials',
@@ -28,7 +28,8 @@ export class DealerCredentials {
 
   constructor (
     private router : Router,
-    private authService: AuthService) {
+    private authService: AuthService,
+    private firestore: Firestore) {
     afterNextRender(() => {
       this.intervalId = setInterval(() => this.nextSlide(), 3000);
     });
@@ -66,10 +67,36 @@ export class DealerCredentials {
     Validators.pattern('^[A-Za-z0-9@$!%*?&]{6,}$')
   ])
 
-  onSignIn(){
-    this.router.navigate(['/landing-page']);
-  }
-  
+dealerId = '';
+password = '';
 
+async onDealerLogin() {
+
+  const q = query(
+    collection(this.firestore, 'users'),
+    where('dealerId', '==', this.dealerId),
+    where('role', '==', 'Dealer')
+  );
+
+  const querySnapshot = await getDocs(q);
+
+  if (querySnapshot.empty) {
+    alert("Dealer ID not found");
+    return;
+  }
+
+  const dealerData = querySnapshot.docs[0].data();
+
+  const email = dealerData['email'];
+
+  this.authService.dealerLogin(email, this.password)
+    .then(() => {
+      console.log("Dealer Login Successful");
+      this.router.navigate(['/landing-page']);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
   
 }

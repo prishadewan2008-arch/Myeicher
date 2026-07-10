@@ -34,7 +34,18 @@
         </div>
       </div>
       <div class="our-services-right">
-        <div *ngFor="let x of data">
+        <div class="column" *ngFor="let column of menuColumns">
+          <div class="section" *ngFor="let section of column">
+            <h4>
+              {{ section.title }}
+              <!-- <span *ngIf="section.badge">{{ section.badge }}</span> -->
+            </h4>
+            <p class="item" *ngFor="let item of section.items">
+              {{ item.name }}
+            </p>
+          </div>
+        </div>
+        <!-- <div *ngFor="let x of data">
           <div class="fleet-tracking" *ngIf="x.title === 'Fleet Tracking'">
             <h4>{{ x.title }}</h4>
             <p *ngFor="let item of x.items">{{ item.name }}</p>
@@ -73,15 +84,8 @@
             <h4>{{ x.title }}</h4>
             <p *ngFor="let item of x.items">{{ item.name }}</p>
           </div>
-        </div>
+        </div> -->
       </div>
-      <!-- <div *ngFor="let x of data">
-  <h3>{{ x.title }}</h3>
-
-  <div *ngFor="let item of x.items">
-    {{ item.name }}
-  </div>
-</div> -->
 
       <!-- <div class="fleet-tracking">
                 <h4>Fleet Tracking</h4>
