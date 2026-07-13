@@ -1,0 +1,14 @@
+.alerts-content {
+  padding: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.alerts-content h2 {
+  color: rgb(0, 0, 94);
+  margin-bottom: 12px;
+}
+
+.alerts-content p {
+  color: grey;
+  font-size: 14px;
+}
