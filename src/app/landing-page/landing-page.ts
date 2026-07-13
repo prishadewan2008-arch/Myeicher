@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from './../services/data';
@@ -101,3 +102,14 @@ searchUsers(){
 
   
 }
+=======
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-landing-page',
+  imports: [],
+  templateUrl: './landing-page.html',
+  styleUrl: './landing-page.css',
+})
+export class LandingPage {}
+>>>>>>> 0611b8e (increased the space between nav items)
