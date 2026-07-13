@@ -2,10 +2,11 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from './../services/data';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
 })
@@ -59,6 +60,39 @@ export class LandingPage {
     console.log(this.menuColumns);
   });
 
+}
+
+users = [
+  {
+    name: "Prisha",
+    email: "prisha@gmail.com",
+    role: "Admin"
+  },
+  {
+    name: "Aman",
+    email: "aman@gmail.com",
+    role: "Dealer"
+  },
+  {
+    name: "Riya",
+    email: "riya@gmail.com",
+    role: "Customer"
+  }
+];
+
+filteredUsers: any[] = [];
+searchText = "";
+
+searchUsers(){
+  
+  if(this.searchText.trim() === ""){
+    this.filteredUsers = [];
+    return;
+  }
+
+  this.filteredUsers = this.users.filter(user =>
+     user.name.toLowerCase().
+     includes(this.searchText.toLowerCase()));
 }
 
   showAlerts(){

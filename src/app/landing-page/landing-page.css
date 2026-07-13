@@ -7,7 +7,7 @@
 }
 
 .header {
-  height: 100px;
+  height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -28,6 +28,20 @@
     text-decoration: none;
     color: white;
     font-weight: 500;
+  }
+
+  .logo{
+    display: flex;
+    flex-wrap: wrap;
+    height: 60px;
+    width: 60px;
+  }
+
+  .search{
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 30px;
   }
 }
 

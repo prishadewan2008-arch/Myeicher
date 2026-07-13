@@ -1,17 +1,29 @@
 <div class="page-container">
   <header class="header">
-    <div class="logo">
-      <img src="./../../assets/logo.svg" alt="Logo" />
-    </div>
+    
+      <img src="./../../assets/MyEicher_Logo.png" alt="Logo" class="logo" />
+    
 
     <nav>
-      <a href="javascript:void(0)" (click)="ourServices()">Our Services ↓</a>
-      <a href="javascript:void(0)" (click)="help()">Help and Support ↓</a>
-      <a>My subscriptions</a>
-      <a>My notifications</a>
+      <a href="">Home</a>
+      <a href="javascript:void(0)" (click)="ourServices()">Our Services ⌄</a>
+      <a href="javascript:void(0)" (click)="help()">Help and Support ⌄</a>
+      <a>My Subscriptions</a>
+      <a>My Notifications</a>
     </nav>
-    <input class="search" type="text" />
+    <input class="search" 
+           type="text"
+           placeholder=" 🔍 Search Users"
+           [(ngModel)]="searchText" 
+           (input)="searchUsers()" />
+    
   </header>
+
+  <div *ngFor="let user of filteredUsers">
+    <h4>{{user.name}}</h4>
+    <p>{{user.email}}</p>
+    <p>{{user.role}}</p>
+  </div>
 
   <div class="our-services" *ngIf="showOurServices">
     <div class="heading">
