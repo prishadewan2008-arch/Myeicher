@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { DataService } from '../services/data';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-main-layout',
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, FormsModule],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.css',
 })
@@ -52,4 +53,44 @@ export class MainLayout {
       this.router.navigate(['/alerts']);
     }
   }
+
+  mysubscriptions(){
+    this.router.navigate(['/my-subscriptions']);
+  }
+
+  users = [
+  {
+    name: "Prisha",
+    email: "prisha@gmail.com",
+    role: "Admin"
+  },
+  {
+    name: "Aman",
+    email: "aman@gmail.com",
+    role: "Dealer"
+  },
+  {
+    name: "Riya",
+    email: "riya@gmail.com",
+    role: "Customer"
+  }
+];
+
+filteredUsers: any[] = [];
+searchText = "";
+
+searchUsers() {
+
+  if(this.searchText.trim() === "") {
+    this.filteredUsers = [];
+    return;
+  }
+
+
+  this.filteredUsers = this.users.filter(user =>
+    user.name.toLowerCase()
+    .includes(this.searchText.toLowerCase())
+  );
+
+}
 }

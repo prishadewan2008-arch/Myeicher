@@ -5,6 +5,7 @@ import { DealerCredentials } from './dealer-credentials/dealer-credentials';
 import { VecvCredentials } from './vecv-credentials/vecv-credentials';
 import { LandingPage } from './landing-page/landing-page';
 import { Alerts } from './alerts/alerts';
+import { MySubscriptions } from './my-subscriptions/my-subscriptions';
 import { MainLayout } from './main-layout/main-layout';
 
 export const routes: Routes = [
@@ -18,6 +19,7 @@ export const routes: Routes = [
     children: [
       { path: 'landing-page', component: LandingPage },
       { path: 'alerts', component: Alerts },
+      { path: 'my-subscriptions', component: MySubscriptions },
     ],
   },
 ];
