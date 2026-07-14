@@ -2,6 +2,9 @@ import { afterNextRender, Component, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormsModule, Validators, ReactiveFormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth';
+import { Firestore, collection, query, where, getDocs } from '@angular/fire/firestore';
+
 
 @Component({
   selector: 'app-customer-credentials',
@@ -29,7 +32,10 @@ export class CustomerCredentials implements OnDestroy {
 
   private intervalId?: ReturnType<typeof setInterval>;
 
-  constructor(private router : Router) {
+  constructor(
+    private router : Router,
+    private authService: AuthService,
+    private firestore: Firestore) {
     afterNextRender(() => {
       const mobile = history.state?.['mobile'] as string | undefined;
       if(!mobile){
@@ -51,20 +57,50 @@ export class CustomerCredentials implements OnDestroy {
     this.currentIndex.update((index) => (index + 1) % this.images.length);
   }
 
-  onLogin(): void {
-    if(!this.username.trim() || !this.password.trim()) {
-      this.errorMessage = 'Please enter your username and password';
-      return;
-    }
+  // onLogin(): void {
+  //   if(!this.username.trim() || !this.password.trim()) {
+  //     this.errorMessage = 'Please enter your username and password';
+  //     return;
+  //   }
 
-    this.errorMessage='';
-    console.log('Customer login', {
-      mobile: this.mobileNumber,
-      username: this.username,
-    });
+  //   this.errorMessage='';
+  //   console.log('Customer login', {
+  //     mobile: this.mobileNumber,
+  //     username: this.username,
+  //   });
 
-    this.router.navigate(['/landing-page']);
+  //   this.router.navigate(['/landing-page']);
+  // }
+
+
+  async onLogin() {
+
+  const q = query(
+    collection(this.firestore, 'users'),
+    where('Username', '==', this.username),
+    where('role', '==', 'Customer')
+  );
+
+  const querySnapshot = await getDocs(q);
+
+  if (querySnapshot.empty) {
+    alert("Customer not found");
+    return;
   }
+
+  const customerData = querySnapshot.docs[0].data();
+
+  const email = customerData['email'];
+
+  this.authService.customerLogin(email, this.password)
+    .then(() => {
+      console.log("Customer Login Successful");
+      this.router.navigate(['/landing-page']);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
 
   goBack(): void {
     this.router.navigate(['/']);

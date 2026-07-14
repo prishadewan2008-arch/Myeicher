@@ -55,6 +55,8 @@ export class MainLayout {
   }
 
   mysubscriptions(){
+    this.showHelp = false;
+    this.showOurServices = false;
     this.router.navigate(['/my-subscriptions']);
   }
 
