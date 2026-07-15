@@ -28,6 +28,7 @@ export class DataService {
 
   private data = [
   {
+    "id": "fleet-tracking",
     "title": "Fleet Tracking",
     "items": [
       { "name": "Track", "route": "/track" },
@@ -35,6 +36,7 @@ export class DataService {
     ]
   },
   {
+    "id": "my-organisation",
     "title": "My Organization",
     "items": [
       { "name": "My Fleet", "route": "/my-fleet" },
@@ -47,6 +49,7 @@ export class DataService {
     ]
   },
   {
+    "id": "uptime-management",
     "title": "Uptime Management",
     "items": [
       { "name": "Fleet Health", "route": "/fleet-health" },
@@ -54,6 +57,7 @@ export class DataService {
     ]
   },
   {
+    "id": "fleet-monitoring",
     "title": "Fleet Monitoring",
     "items": [
       { "name": "My Dashboard", "route": "/dashboard" },
@@ -63,6 +67,7 @@ export class DataService {
     ]
   },
   {
+    "id": "alerts",
     "title": "Alerts",
     "items": [
       { "name": "My Alerts", "route": "/alerts" },
@@ -70,6 +75,7 @@ export class DataService {
     ]
   },
   {
+    "id": "fuel-management",
     "title": "Fuel Management",
     "items": [
       { "name": "Fuel Refill & Drain", "route": "/fuel-refill-drain" },
@@ -80,6 +86,7 @@ export class DataService {
     ]
   },
   {
+    "id": "trip-management",
     "title": "Trip Management",
     "badge": "Beta",
     "items": [
@@ -90,6 +97,7 @@ export class DataService {
     ]
   },
   {
+    "id": "reports",
     "title": "Reports",
     "items": [
       { "name": "Monthly Report", "route": "/monthly-report" },
@@ -98,6 +106,7 @@ export class DataService {
     ]
   },
   {
+    "id": "smart-solutions",
     "title": "Smart Solutions",
     "items": [
       { "name": "API Service", "route": "/api-service" },

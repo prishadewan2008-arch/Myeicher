@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { DataService } from '../services/data';
 import { FormsModule } from '@angular/forms';
+import { Firestore, collection, query, where, getDocs } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-main-layout',
@@ -15,10 +16,14 @@ export class MainLayout {
   showHelp = false;
   data: any[] = [];
   menuColumns: any[][] = [];
+  allMenuColumns: any[] = [];
+  allowedFeatures: string[] = [];
+  isAdmin: boolean = false;
 
   constructor(
     private router: Router,
     private menuService: DataService,
+    private firestore: Firestore,
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +36,11 @@ export class MainLayout {
         [this.data[8]],
       ];
     });
+    this.selectUser('Prisha');
+  }
+
+  canShowSection(id: string): boolean {
+    return this.allowedFeatures.includes(id);
   }
 
   ourServices(): void {
@@ -54,45 +64,72 @@ export class MainLayout {
     }
   }
 
-  mysubscriptions(){
+  mysubscriptions() {
     this.showHelp = false;
     this.showOurServices = false;
     this.router.navigate(['/my-subscriptions']);
   }
 
+  landingPage() {
+    this.showHelp = false;
+    this.showOurServices = false;
+    this.router.navigate(['/landing-page']);
+  }
+
   users = [
-  {
-    name: "Prisha",
-    email: "prisha@gmail.com",
-    role: "Admin"
-  },
-  {
-    name: "Aman",
-    email: "aman@gmail.com",
-    role: "Dealer"
-  },
-  {
-    name: "Riya",
-    email: "riya@gmail.com",
-    role: "Customer"
+    'Prisha',
+    'Priti',
+    'Priyanka',
+    'Aman',
+    'Ankit',
+    'Akhil',
+    'Riya',
+    'Rishika',
+    'Ronak',
+    'Rahul',
+  ];
+
+  filteredUsers: string[] = [];
+  searchText = '';
+
+  searchUsers() {
+    if (this.searchText.trim() === '') {
+      this.filteredUsers = [];
+      return;
+    }
+
+    this.filteredUsers = this.users.filter((user) =>
+      user.toLowerCase().startsWith(this.searchText.toLowerCase()),
+    );
   }
-];
 
-filteredUsers: any[] = [];
-searchText = "";
+  async selectUser(user: string) {
+    this.searchText = user;
+    // this.filteredUsers = [];
+    // this.filteredUsers = this.users.filter((user) =>
+    //   user.toLowerCase().startsWith(this.searchText.toLowerCase()),
+    // );
 
-searchUsers() {
+    const usersRef = collection(this.firestore, 'users');
 
-  if(this.searchText.trim() === "") {
+    const q = query(usersRef, where('name', '==', user));
+
+    const querySnapshot = await getDocs(q);
+
+    if (!querySnapshot.empty) {
+      const userData = querySnapshot.docs[0].data();
+      if (userData['isAdmin'] === true) {
+        this.isAdmin = true;
+        this.allowedFeatures = this.data.map((section) => section.id);
+      } else {
+        this.isAdmin = false;
+        this.allowedFeatures = userData['features'];
+      }
+    } else {
+      console.log('User not found');
+      this.allowedFeatures = [];
+    }
+
     this.filteredUsers = [];
-    return;
   }
-
-
-  this.filteredUsers = this.users.filter(user =>
-    user.name.toLowerCase()
-    .includes(this.searchText.toLowerCase())
-  );
-
-}
 }

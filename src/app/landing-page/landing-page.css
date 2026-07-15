@@ -1,6 +1,344 @@
 .landing-content {
-  padding: 40px;
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  color: rgb(0, 0, 94);
 }
+
+.trucks {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  transition: transform 0.8s ease-in-out;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background: linear-gradient(135deg, #dceeff, #f5fbff);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  /* width: 1368px; */
+  height: 224px;
+  top: 64px;
+left: 72px;
+opacity: 1;
+border-bottom-width: 1px;
+
+}
+
+.progress-ring {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(#2f5ea0 0deg 317deg, #e5e7eb 317deg 360deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.progress-ring::before {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.progress-ring span {
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 321px;
+  height: 123px;
+  top: 56px;
+  left: 276px;
+  opacity: 1;
+  margin-top: 50px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    /* margin-bottom: 15px; */
+    color: #183153;
+    margin: 0;
+  }
+  h4{
+    color: rgb(66, 66, 66);
+    margin: 0;
+  }
+  p{
+    color: grey;
+    margin: 0;
+  }
+  .view-fleet {
+    color: rgb(0, 0, 94);
+    font-weight: 600;
+    margin-top: 20px;
+  }
+}
+
+.hero-image {
+  /* text-align: right; */
+  width: 164;
+  height: 164;
+  top: 15px;
+  left: 17px;
+  opacity: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 350px;
+}
+
+.cards{
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.updates-card {
+  width: 225px;
+  height: 180px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  background: #fff;
+  border: 1px solid #E0E9FF;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(35, 85, 212, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    span {
+      background: #EEF2FF;
+      color: #475A99;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+  }
+
+  .middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+
+      h4 {
+        margin: 0;
+        font-size: 36px;
+        color: #475A99;
+        font-weight: 700;
+      }
+
+      h5 {
+        margin: 4px 0;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 0;
+        font-size: 13px;
+        color: #6B7280;
+        line-height: 18px;
+      }
+    }
+
+    img {
+      width: 70px;
+      height: auto;
+    }
+  }
+
+  button {
+    width: 100%;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: #EEF2FF;
+    color: #475A99;
+
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.activate-card {
+  width: 225px;
+  height: 180px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(35, 85, 212, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  .middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+      p {
+        margin: 0;
+        font-size: 13px;
+        color: #6B7280;
+        line-height: 18px;
+      }
+    }
+
+    img {
+      width: 80px;
+      height: auto;
+    }
+  }
+
+  button {
+    width: 100%;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border: none;
+    border-radius: 18px;
+    border-color: rgba(135, 218, 254, 0.26);
+
+    background: rgba(135, 218, 254, 0.26);
+    color: rgba(2, 48, 255, 0.589);
+
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.renewals-card {
+  width: 225px;
+  height: 180px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  background: #fff;
+  border: 1px solid #E0E9FF;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(35, 85, 212, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  .middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+
+      h4 {
+        margin: 0;
+        font-size: 36px;
+        color: #475A99;
+        font-weight: 700;
+      }
+
+      h5 {
+        margin: 4px 0;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 0;
+        font-size: 13px;
+        color: #6B7280;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+/* .fleet-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 12px 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin: 25px;
+  width: 300px;
+}
+
+.fleet-header {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  color: #1f2937;
+} */

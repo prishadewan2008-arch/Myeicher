@@ -1,28 +1,30 @@
 <div class="page-container">
   <header class="header">
-   
-      <img src="/assets/MyEicher_Logo.png" alt="Logo" class="logo"/>
+    <img src="/assets/MyEicher_Logo.png" alt="Logo" class="logo" />
 
     <nav>
+      <a href="javascript:void(0)" (click)="landingPage()">Home</a>
       <a href="javascript:void(0)" (click)="ourServices()">Our Services ⌄</a>
       <a href="javascript:void(0)" (click)="help()">Help and Support ⌄</a>
       <a href="javascript:void(0)" (click)="mysubscriptions()">My Subscriptions</a>
       <a>My Notifications</a>
     </nav>
-    <input class="search" 
-    type="text"
-    placeholder=" 🔍 Search users"
-    [(ngModel)]="searchText"
-    (input)="searchUsers()" />
+    <div class="search-container">
+      <input
+        class="search-box"
+        type="text"
+        placeholder="Search users"
+        [(ngModel)]="searchText"
+        (input)="searchUsers()"
+      />
+
+      <div class="search-results" *ngIf="filteredUsers.length > 0">
+        <div class="result" *ngFor="let user of filteredUsers" (click)="selectUser(user)">
+          {{ user }}
+        </div>
+      </div>
+    </div>
   </header>
-
-  <div *ngFor="let user of filteredUsers">
-
-  <h3>{{user.name}}</h3>
-  <p>{{user.email}}</p>
-  <p>{{user.role}}</p>
-
-</div>
 
   <div class="our-services" *ngIf="showOurServices">
     <div class="heading">
@@ -46,15 +48,22 @@
       </div>
       <div class="our-services-right">
         <div class="column" *ngFor="let column of menuColumns">
-          <div class="section" *ngFor="let section of column">
-            <h4>{{ section.title }}</h4>
-            <p
-              class="item"
-              *ngFor="let item of section.items"
-              (click)="onItemClick(item.name)">
-              {{ item.name }}
-            </p>
-          </div>
+         <ng-container *ngFor="let section of column">
+
+  <div class="section" *ngIf="canShowSection(section.id)">
+
+    <h4>{{ section.title }}</h4>
+
+    <p 
+      class="item"
+      *ngFor="let item of section.items"
+      (click)="onItemClick(item.name)">
+        {{ item.name }}
+    </p>
+
+  </div>
+
+</ng-container>
         </div>
       </div>
     </div>

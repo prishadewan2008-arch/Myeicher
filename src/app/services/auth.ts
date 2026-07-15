@@ -52,6 +52,15 @@ customerLogin(email: string, password: string) {
   );
 }
 
+VecvLogin(email: string, password: string) {
+  return signInWithEmailAndPassword(
+    this.auth,
+    email,
+    password
+  );
+}
+
+
   register(email: string, password: string) {
     return createUserWithEmailAndPassword(this.auth, email, password);
   }
