@@ -95,6 +95,7 @@ export class CustomerCredentials implements OnDestroy {
   this.authService.customerLogin(email, this.password)
     .then(() => {
       console.log("Customer Login Successful");
+      this.authService.setUserName(customerData['name']);
       this.router.navigate(['/landing-page']);
     })
     .catch(error => {

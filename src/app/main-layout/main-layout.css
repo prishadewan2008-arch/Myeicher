@@ -38,6 +38,20 @@
   }
 }
 
+.profile {
+  display: flex;
+  align-items: center;
+  
+  margin-left: 40px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+
+}
+
 .page-content {
   flex: 1;
 }

@@ -1,5 +1,8 @@
 .landing-content {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .trucks {
@@ -19,10 +22,9 @@
   /* width: 1368px; */
   height: 224px;
   top: 64px;
-left: 72px;
-opacity: 1;
-border-bottom-width: 1px;
-
+  left: 72px;
+  opacity: 1;
+  border-bottom-width: 1px;
 }
 
 .progress-ring {
@@ -74,11 +76,11 @@ border-bottom-width: 1px;
     color: #183153;
     margin: 0;
   }
-  h4{
+  h4 {
     color: rgb(66, 66, 66);
     margin: 0;
   }
-  p{
+  p {
     color: grey;
     margin: 0;
   }
@@ -103,7 +105,7 @@ border-bottom-width: 1px;
   max-width: 350px;
 }
 
-.cards{
+.cards {
   gap: 20px;
   display: flex;
   flex-direction: row;
@@ -117,7 +119,7 @@ border-bottom-width: 1px;
   box-sizing: border-box;
 
   background: #fff;
-  border: 1px solid #E0E9FF;
+  border: 1px solid #e0e9ff;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(35, 85, 212, 0.1);
 
@@ -137,8 +139,8 @@ border-bottom-width: 1px;
     }
 
     span {
-      background: #EEF2FF;
-      color: #475A99;
+      background: #eef2ff;
+      color: #475a99;
       padding: 2px 8px;
       border-radius: 10px;
       font-size: 11px;
@@ -152,11 +154,10 @@ border-bottom-width: 1px;
     align-items: center;
 
     .text {
-
       h4 {
         margin: 0;
         font-size: 36px;
-        color: #475A99;
+        color: #475a99;
         font-weight: 700;
       }
 
@@ -169,7 +170,7 @@ border-bottom-width: 1px;
       p {
         margin: 0;
         font-size: 13px;
-        color: #6B7280;
+        color: #6b7280;
         line-height: 18px;
       }
     }
@@ -192,8 +193,8 @@ border-bottom-width: 1px;
     border: none;
     border-radius: 18px;
 
-    background: #EEF2FF;
-    color: #475A99;
+    background: #eef2ff;
+    color: #475a99;
 
     font-size: 14px;
     font-weight: 600;
@@ -237,7 +238,7 @@ border-bottom-width: 1px;
       p {
         margin: 0;
         font-size: 13px;
-        color: #6B7280;
+        color: #6b7280;
         line-height: 18px;
       }
     }
@@ -277,7 +278,7 @@ border-bottom-width: 1px;
   box-sizing: border-box;
 
   background: #fff;
-  border: 1px solid #E0E9FF;
+  border: 1px solid #e0e9ff;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(35, 85, 212, 0.1);
 
@@ -303,11 +304,10 @@ border-bottom-width: 1px;
     align-items: center;
 
     .text {
-
       h4 {
         margin: 0;
         font-size: 36px;
-        color: #475A99;
+        color: #475a99;
         font-weight: 700;
       }
 
@@ -320,25 +320,156 @@ border-bottom-width: 1px;
       p {
         margin: 0;
         font-size: 13px;
-        color: #6B7280;
+        color: #6b7280;
         line-height: 18px;
       }
     }
   }
 }
 
-/* .fleet-card {
+.trackAndFleet {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.fleet-card {
+  width: 432px;
+  height: 290px;
+  border-radius: 10px;
+  border: 1px solid rgba(219, 219, 219, 0.3);
+  box-shadow: 0 6px 18px rgba(120, 133, 151, 0.15);
+  padding: 16px;
+  box-sizing: border-box;
   background: #fff;
-  border-radius: 18px;
-  padding: 12px 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  margin: 25px;
-  width: 300px;
 }
 
 .fleet-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  font-size: 22px;
-  color: #1f2937;
-} */
+  margin-bottom: 20px;
+
+  p {
+    font-size: 14px;
+    color: grey;
+    margin: 0;
+  }
+}
+
+.fleet-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  h4 {
+    margin: 0;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+  }
+
+  p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+  }
+
+  span {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: rgba(101, 101, 101, 1);
+  }
+}
+
+.graph-space {
+  height: 120px;
+}
+
+.fleet-boxes {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  width: 378px;
+  height: 60px;
+}
+
+.peak-day {
+  flex: 1;
+  width: 184px;
+  height: 58px;
+  border-radius: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(43, 127, 255, 0.08), rgba(97, 95, 255, 0.05));
+}
+
+.peak-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.peak-info hr {
+  width: 1px;
+  height: 16px;
+  margin: 0;
+  border: none;
+  background: #999;
+}
+
+.peak-day > p {
+  margin: 0;
+  font-size: 12px;
+  color: #7b8794;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.fuelAndEnergy {
+  width: 936px;
+  height: 340px;
+  top: 614px;
+  left: 88px;
+  border-radius: 10px;
+  border-width: 1px;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 1);
+  border-color: rgba(219, 219, 219, 0.3);
+  box-shadow: 0 6px 18px rgba(120, 133, 151, 0.15);
+  margin-bottom: 16px;
+}
+
+.searching{
+  width: 320px;
+height: 40px;
+opacity: 1;
+}
+
+.location{
+  width: 364px;
+height: 42px;
+gap: 15px;
+opacity: 1;
+}
+
+.current-location{
+  width: 152px;
+height: 40px;
+border-radius: 10px;
+gap: 10px;
+opacity: 1;
+padding-top: 11px;
+padding-right: 12px;
+padding-bottom: 12px;
+padding-left: 13px;
+background: linear-gradient(90deg, rgba(231, 0, 11, 0.04) 0%, rgba(193, 0, 7, 0.04) 100%);
+ color: rgba(231, 0, 11, 1);
+border-color: white;
+}

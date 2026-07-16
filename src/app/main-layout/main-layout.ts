@@ -4,6 +4,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { DataService } from '../services/data';
 import { FormsModule } from '@angular/forms';
 import { Firestore, collection, query, where, getDocs } from '@angular/fire/firestore';
+import { AuthService } from '../services/auth';
 
 @Component({
   selector: 'app-main-layout',
@@ -19,11 +20,13 @@ export class MainLayout {
   allMenuColumns: any[] = [];
   allowedFeatures: string[] = [];
   isAdmin: boolean = false;
+  loggedInUserName = '';
 
   constructor(
     private router: Router,
     private menuService: DataService,
     private firestore: Firestore,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +40,9 @@ export class MainLayout {
       ];
     });
     this.selectUser('Prisha');
+    this.authService.userName$.subscribe(name => {
+    this.loggedInUserName = name;
+});
   }
 
   canShowSection(id: string): boolean {

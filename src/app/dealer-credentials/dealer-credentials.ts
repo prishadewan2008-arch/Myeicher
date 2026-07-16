@@ -92,6 +92,7 @@ async onDealerLogin() {
   this.authService.dealerLogin(email, this.password)
     .then(() => {
       console.log("Dealer Login Successful");
+      this.authService.setUserName(dealerData['name']);
       this.router.navigate(['/landing-page']);
     })
     .catch(error => {

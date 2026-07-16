@@ -56,6 +56,7 @@ export class VecvCredentials {
   this.authService.VecvLogin(email, this.password)
     .then(() => {
       console.log("Vecv Login Successful");
+      this.authService.setUserName(VecvData['name']);
       this.router.navigate(['/landing-page']);
     })
     .catch(error => {

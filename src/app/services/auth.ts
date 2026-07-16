@@ -6,6 +6,7 @@ import {
   signOut,
 } from '@angular/fire/auth';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -34,6 +35,18 @@ export class AuthService {
     } else {
       throw new Error('User data not found');
     }
+  }
+
+   private currentUserName = new BehaviorSubject<string>('');
+
+  userName$ = this.currentUserName.asObservable();
+
+  setUserName(name: string) {
+    this.currentUserName.next(name);
+  }
+
+  clearUser() {
+    this.currentUserName.next('');
   }
 
   dealerLogin(email: string, password: string) {
