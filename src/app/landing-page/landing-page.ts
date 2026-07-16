@@ -1,9 +1,11 @@
 import { Component, OnInit, afterNextRender, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BaseChartDirective } from 'ng2-charts';
+import { ChartConfiguration } from 'chart.js';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [CommonModule],
+  imports: [CommonModule, BaseChartDirective],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
 })
@@ -33,4 +35,24 @@ export class LandingPage {
     this.prevIndex.set(this.currentIndex())
     this.currentIndex.update((index) => (index + 1) % this.images.length);
   }
+
+  public barChartData: ChartConfiguration<'bar'>['data'] = {
+  labels: [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May'
+  ],
+  datasets: [
+    {
+      label: 'Kms covered',
+      data: [15, 30, 45, 75, 100]
+    }
+  ]
+};
+
+public barChartOptions: ChartConfiguration<'bar'>['options'] = {
+  responsive: true,
+};
 }

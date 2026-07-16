@@ -83,13 +83,39 @@
     <div class="fleet-card">
       <div class="track-heading">
         <h4>Tracking</h4>
+        <span class="live-status">
+          <span class="live-dot"></span>
+          Live
+        </span>
       </div>
-      <div>
-        <input placeholder="Search for any Vehicle in track" class="searching">
+
+      <div class="tracking-content">
+        <!-- Google Maps Placeholder -->
+        <div class="map-container">
+          <!-- Google Map will come here -->
+        </div>
+
+        <div class="tracking-right">
+          <input type="text" placeholder="Search for any Vehicle in track" class="searching" />
+
+          <div class="location">
+            <button class="current-location">Current Location</button>
+            <button class="current-location">Live Location</button>
+          </div>
+        </div>
       </div>
-      <div class="location">
-        <button class="current-location">Current Location</button>
-        <button class="current-location">Live Location</button>
+
+      <div class="tracking-cards">
+        <div class="stopped-vehicle">
+          <h4>Stopped Vehicle</h4>
+          <h3>223</h3>
+          <p>Last 4 Hours</p>
+        </div>
+
+        <div class="device-attention">
+          <h4>Device Attention</h4>
+          <h3>42</h3>
+        </div>
       </div>
     </div>
 
@@ -105,8 +131,10 @@
         <p class="days">Last 7 days</p>
       </div>
 
-      <!-- Empty graph area -->
-      <div class="graph-space"></div>
+      <div class="graph-space">
+        <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="'bar'">
+        </canvas>
+      </div>
 
       <div class="fleet-boxes">
         <div class="peak-day">
@@ -130,6 +158,103 @@
   <div class="fuelAndEnergy">
     <div class="fuelHeading">
       <h4>Fuel & Energy</h4>
+    </div>
+  </div>
+</div>
+
+<div class="uptime-card">
+
+  <div class="uptime-header">
+    <h4>Uptime</h4>
+
+    <div class="live-status">
+      <span class="live-dot"></span>
+      <span>Live</span>
+    </div>
+  </div>
+
+  <div class="group-card">
+    <div class="group-title">
+      Service Alerts
+    </div>
+    <div class="row-item">
+      <div class="left">
+        <img src="">
+        <span>Upcoming</span>
+      </div>
+      <div class="right">
+        <h4 class="blue">213</h4>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="left">
+        <img src="">
+        <span>Delayed</span>
+      </div>
+      <div class="right">
+        <h4 class="orange">24</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="single-card">
+    <div class="single-top">
+      <div class="left">
+        <img src="assets/breakdown.svg">
+        <span>Breakdown</span>
+      </div>
+    </div>
+    <div class="single-bottom">
+      <h2 class="red">23</h2>
+      <p>View All ↗</p>
+    </div>
+  </div>
+
+  <div class="single-card">
+    <div class="single-top">
+      <div class="left">
+        <img src="assets/inservice.svg">
+        <span>In Service</span>
+      </div>
+    </div>
+
+    <div class="single-bottom">
+      <h2 class="blue">123</h2>
+      <p>View All ↗</p>
+    </div>
+  </div>
+
+  <div class="group-card" style="height:184px">
+    <div class="group-title">
+      Uptime Alerts
+    </div>
+
+    <div class="row-item">
+      <div class="left">
+        <img src="assets/stop.svg">
+        <span>Stop Now</span>
+      </div>
+      <div class="right">
+        <h4 class="blue">125</h4>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="left">
+        <img src="assets/visit.svg">
+        <span>Visit Soon</span>
+      </div>
+      <div class="right">
+        <h4 class="orange">65</h4>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="left">
+        <img src="assets/driver.svg">
+        <span>Driver Alerts</span>
+      </div>
+      <div class="right">
+        <h4 class="blue">128</h4>
+      </div>
     </div>
   </div>
 </div>
