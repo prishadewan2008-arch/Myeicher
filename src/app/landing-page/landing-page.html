@@ -1,6 +1,6 @@
 <div class="landing-page">
   <div class="collapsible-short">
-    <img src="./../../assets/collapsible.svg" (click)="isOpen = !isOpen"/>
+    <img src="./../../assets/collapsible.svg" (click)="isOpen = !isOpen" />
     <hr />
     <img src="./../../assets/fleet.svg" />
     <img src="./../../assets/reports.svg" />
@@ -181,9 +181,44 @@
             </div>
           </div>
         </div>
+        
         <div class="fuelAndEnergy">
-          <div class="fuelHeading">
-            <h4>Fuel & Energy</h4>
+          <div class="fuel-header">
+            <div class="fuel-title">
+              <h4>Fuel & Energy</h4>
+              <span>Last 7 days</span>
+            </div>
+            <div class="action-required">
+              <span>Action Required</span>
+            </div>
+          </div>
+          <div class="fuel-tabs">
+            <button class="active">Diesel</button>
+            <button>EV</button>
+            <button>CNG</button>
+            <button>LNG</button>
+          </div>
+          <div class="fuel-content">
+            <div class="fuel-chart">
+              <h5>Fuel Efficiency</h5>
+              <div class="graph-area"></div>
+            </div>
+            <div class="fuel-side">
+              <div class="info-card">
+                <div class="card-top">
+                  <span>Average Efficiency</span>
+                  <span>></span>
+                </div>
+                <h2>6 <span>km/L</span></h2>
+              </div>
+              <div class="info-card">
+                <div class="card-top">
+                  <span>Fuel Drain</span>
+                  <span>></span>
+                </div>
+                <h2 class="danger">2,030 <span>L</span></h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
