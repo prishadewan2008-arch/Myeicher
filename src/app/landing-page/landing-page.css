@@ -1,8 +1,8 @@
 .landing-content {
   font-family: 'Roboto', sans-serif;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row;
+  gap: 15px;
 }
 
 .trucks {
@@ -25,6 +25,8 @@
   left: 72px;
   opacity: 1;
   border-bottom-width: 1px;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
 }
 
 .progress-ring {
@@ -600,7 +602,7 @@
   padding:24px;
   box-shadow:0 4px 18px rgba(0,0,0,.08);
   font-family: 'Roboto', sans-serif;
-  width: 384px;
+  width: 312px;
 height: 646px;
 top: 308px;
 left: 1040px;
@@ -647,8 +649,8 @@ opacity: 1;
   border:1px solid #ECECEC;
   box-shadow:0 3px 12px rgba(0,0,0,.06);
   margin-bottom:15px;
-  width: 352px;
-height: 146px;
+  width: 320px;
+height: 168px;
 border-radius: 10px;
 opacity: 1;
 border-bottom-width: 1px;
@@ -712,8 +714,8 @@ border-bottom-width: 1px;
   padding-top:10px;
   padding-bottom: 10px;
   margin-bottom:15px;
-  width: 352px;
-height: 94px;
+  width: 320px;
+height: 81px;
 opacity: 1;
 
 }
@@ -756,4 +758,26 @@ opacity: 1;
 
 .red{
   color:#E53935;
+}
+
+.landing-page-left{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.uptime-alerts{
+  height: 184px;
+  display: flex;
+  flex-direction: column;
+  background:#fff;
+  border:1px solid #ECECEC;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
+  margin-bottom:15px;
+  width: 320px;
+border-radius: 10px;
+opacity: 1;
+border-bottom-width: 1px;
+
+
 }
