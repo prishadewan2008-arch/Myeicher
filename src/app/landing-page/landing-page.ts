@@ -55,4 +55,7 @@ export class LandingPage {
 public barChartOptions: ChartConfiguration<'bar'>['options'] = {
   responsive: true,
 };
+
+isOpen = false;
+
 }

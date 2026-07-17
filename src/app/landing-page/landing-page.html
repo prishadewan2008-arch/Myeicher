@@ -1,7 +1,27 @@
-<div class="hero-section">
-    <div class="hero-image">
-      <img src="./../../assets/truck2_portal.svg" alt="Truck2" />
-      <!-- <div
+<div class="landing-page">
+  <div class="collapsible-short">
+    <img src="./../../assets/collapsible.svg" (click)="isOpen = !isOpen"/>
+    <hr />
+    <img src="./../../assets/fleet.svg" />
+    <img src="./../../assets/reports.svg" />
+    <img src="./../../assets/track.svg" />
+    <img src="./../../assets/my-fleet.svg" />
+    <img src="./../../assets/dashboard.svg" />
+    <img src="./../../assets/edit.svg" />
+    <img src="./../../assets/our-products.svg" />
+    <img src="./../../assets/dealer.svg" />
+    <img src="./../../assets/eicher-sure.svg" />
+    <img src="./../../assets/documents.svg" />
+    <img src="./../../assets/knowledge.svg" />
+    <hr />
+    <img src="" />
+  </div>
+
+  <div class="landing">
+    <div class="hero-section">
+      <div class="hero-image">
+        <img src="./../../assets/truck2_portal.svg" alt="Truck2" />
+        <!-- <div
           class="trucks"
           *ngFor="let img of images; let i = index"
           [class.active]="currentIndex() === i"
@@ -9,254 +29,307 @@
           [class.hidden]="currentIndex() !== i && (prevIndex() !== i || prevIndex() === currentIndex())"
           [style.img]="'url(' + img + ')'"
         ></div> -->
-    </div>
-    <div class="hero-content">
-      <div class="progress-ring">
-        <span>88%</span>
       </div>
-      <div class="hero-text">
-        <h3>96</h3>
-        <h4>Eicher connected vehicles</h4>
-        <p>out of <strong>109</strong> Total fleet</p>
-        <p class="view-fleet">View Fleet →</p>
-      </div>
-    </div>
-
-    <div class="cards">
-      <div class="updates-card">
-        <div class="top">
-          <h3>Updates</h3>
-          <span>New</span>
+      <div class="hero-content">
+        <div class="progress-ring">
+          <span>88%</span>
         </div>
+        <div class="hero-text">
+          <h3>96</h3>
+          <h4>Eicher connected vehicles</h4>
+          <p>out of <strong>109</strong> Total fleet</p>
+          <p class="view-fleet">View Fleet →</p>
+        </div>
+      </div>
 
-        <div class="middle">
-          <div class="text">
-            <h4>4</h4>
-            <h5>New KPIs</h5>
-            <p>Added in Past 2 Months</p>
+      <div class="cards">
+        <div class="updates-card">
+          <div class="top">
+            <h3>Updates</h3>
+            <span>New</span>
           </div>
 
-          <img src="./../../assets/speaker-icon.svg" alt="speaker-icon" />
-        </div>
+          <div class="middle">
+            <div class="text">
+              <h4>4</h4>
+              <h5>New KPIs</h5>
+              <p>Added in Past 2 Months</p>
+            </div>
 
-        <button>
-          View Updates
-          <span>→</span>
-        </button>
-      </div>
-
-      <div class="activate-card">
-        <div class="top">
-          <h3>Activate Now</h3>
-        </div>
-
-        <div class="middle">
-          <div class="text">
-            <p>Eicher connect API now</p>
+            <img src="./../../assets/speaker-icon.svg" alt="speaker-icon" />
           </div>
-          <img src="./../../assets/upsell-truck.svg" alt="speaker-icon" />
+
+          <button>
+            View Updates
+            <span>→</span>
+          </button>
         </div>
 
-        <button>
-          Explore
-          <span>→</span>
-        </button>
-      </div>
-
-      <div class="renewals-card">
-        <div class="top">
-          <h3>Renewals</h3>
-        </div>
-
-        <div class="middle">
-          <div class="text">
-            <h5>Digital Lock</h5>
-            <h4>2</h4>
-            <p>Vehicles due for renewal</p>
+        <div class="activate-card">
+          <div class="top">
+            <h3>Activate Now</h3>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
+          <div class="middle">
+            <div class="text">
+              <p>Eicher connect API now</p>
+            </div>
+            <img src="./../../assets/upsell-truck.svg" alt="speaker-icon" />
+          </div>
 
-<div class="landing-content">
-
-  <div class="landing-page-left">
-    <div class="trackAndFleet">
-    <div class="fleet-card">
-      <div class="track-heading">
-        <h4>Tracking</h4>
-        <span class="live-status">
-          <span class="live-dot"></span>
-          Live
-        </span>
-      </div>
-
-      <div class="tracking-content">
-        <!-- Google Maps Placeholder -->
-        <div class="map-container">
-          <!-- Google Map will come here -->
+          <button>
+            Explore
+            <span>→</span>
+          </button>
         </div>
 
-        <div class="tracking-right">
-          <input type="text" placeholder="Search for any Vehicle in track" class="searching" />
+        <div class="renewals-card">
+          <div class="top">
+            <h3>Renewals</h3>
+          </div>
 
-          <div class="location">
-            <button class="current-location">Current Location</button>
-            <button class="current-location">Live Location</button>
+          <div class="middle">
+            <div class="text">
+              <h5>Digital Lock</h5>
+              <h4>2</h4>
+              <p>Vehicles due for renewal</p>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="tracking-cards">
-        <div class="stopped-vehicle">
-          <h4>Stopped Vehicle</h4>
-          <h3>223</h3>
-          <p>Last 4 Hours</p>
-        </div>
-
-        <div class="device-attention">
-          <h4>Device Attention</h4>
-          <h3>42</h3>
-        </div>
-      </div>
     </div>
 
-    <div class="fleet-card">
-      <div class="fleet-header">
-        <div class="fleet-heading">
-          <h4>
-            Fleet Utilization
-            <span class="sub-text">(Km Operated per Vehicle)</span>
-          </h4>
+    <div class="landing-content">
+      <div class="landing-page-left">
+        <div class="trackAndFleet">
+          <div class="fleet-card">
+            <div class="track-heading">
+              <h4>Tracking</h4>
+              <span class="live-status">
+                <span class="live-dot"></span>
+                Live
+              </span>
+            </div>
+
+            <div class="tracking-content">
+              <!-- Google Maps Placeholder -->
+              <div class="map-container">
+                <!-- Google Map will come here -->
+              </div>
+
+              <div class="tracking-right">
+                <input
+                  type="text"
+                  placeholder="Search for any Vehicle in track"
+                  class="searching"
+                />
+
+                <div class="location">
+                  <button class="current-location">Current Location</button>
+                  <button class="current-location">Live Location</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="tracking-cards">
+              <div class="stopped-vehicle">
+                <h4>Stopped Vehicle</h4>
+                <h3>223</h3>
+                <p>Last 4 Hours</p>
+              </div>
+
+              <div class="device-attention">
+                <h4>Device Attention</h4>
+                <h3>42</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="fleet-card">
+            <div class="fleet-header">
+              <div class="fleet-heading">
+                <h4>
+                  Fleet Utilization
+                  <span class="sub-text">(Km Operated per Vehicle)</span>
+                </h4>
+              </div>
+
+              <p class="days">Last 7 days</p>
+            </div>
+
+            <div class="graph-space">
+              <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="'bar'">
+              </canvas>
+            </div>
+
+            <div class="fleet-boxes">
+              <div class="peak-day">
+                <p class="label">PEAK DAY</p>
+
+                <div class="peak-info">
+                  <span>23rd May</span>
+                  <hr />
+                  <span>400 Km</span>
+                </div>
+              </div>
+
+              <div class="peak-day">
+                <p class="label">AVERAGE</p>
+
+                <h4>150 Km</h4>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <p class="days">Last 7 days</p>
+        <div class="fuelAndEnergy">
+          <div class="fuelHeading">
+            <h4>Fuel & Energy</h4>
+          </div>
+        </div>
       </div>
 
-      <div class="graph-space">
-        <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="'bar'">
-        </canvas>
-      </div>
-
-      <div class="fleet-boxes">
-        <div class="peak-day">
-          <p class="label">PEAK DAY</p>
-
-          <div class="peak-info">
-            <span>23rd May</span>
-            <hr />
-            <span>400 Km</span>
+      <div class="uptime-card">
+        <div class="uptime-header">
+          <h4>Uptime</h4>
+          <div class="live-status">
+            <span class="live-dot"></span>
+            <span>Live</span>
+          </div>
+        </div>
+        <div class="group-card">
+          <div class="group-title">Service Alerts</div>
+          <div class="row-item">
+            <div class="left">
+              <img src="" />
+              <span>Upcoming</span>
+            </div>
+            <div class="right">
+              <h4 class="blue">213</h4>
+            </div>
+          </div>
+          <div class="row-item">
+            <div class="left">
+              <img src="" />
+              <span>Delayed</span>
+            </div>
+            <div class="right">
+              <h4 class="orange">24</h4>
+            </div>
           </div>
         </div>
 
-        <div class="peak-day">
-          <p class="label">AVERAGE</p>
+        <div class="single-card">
+          <div class="single-top">
+            <div class="left">
+              <img src="assets/breakdown.svg" />
+              <span>Breakdown</span>
+            </div>
+          </div>
+          <div class="single-bottom">
+            <h2 class="red">23</h2>
+            <p>View All ↗</p>
+          </div>
+        </div>
 
-          <h4>150 Km</h4>
+        <div class="single-card">
+          <div class="single-top">
+            <div class="left">
+              <img src="assets/inservice.svg" />
+              <span>In Service</span>
+            </div>
+          </div>
+
+          <div class="single-bottom">
+            <h2 class="blue">123</h2>
+            <p>View All ↗</p>
+          </div>
+        </div>
+
+        <div class="uptime-alerts">
+          <div class="group-title">Uptime Alerts</div>
+
+          <div class="row-item">
+            <div class="left">
+              <img src="assets/stop.svg" />
+              <span>Stop Now</span>
+            </div>
+            <div class="right">
+              <h4 class="blue">125</h4>
+            </div>
+          </div>
+          <div class="row-item">
+            <div class="left">
+              <img src="assets/visit.svg" />
+              <span>Visit Soon</span>
+            </div>
+            <div class="right">
+              <h4 class="orange">65</h4>
+            </div>
+          </div>
+          <div class="row-item">
+            <div class="left">
+              <img src="assets/driver.svg" />
+              <span>Driver Alerts</span>
+            </div>
+            <div class="right">
+              <h4 class="blue">128</h4>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="fuelAndEnergy">
-    <div class="fuelHeading">
-      <h4>Fuel & Energy</h4>
-    </div>
-  </div>
-  </div>
 
-  <div class="uptime-card">
-  <div class="uptime-header">
-    <h4>Uptime</h4>
-    <div class="live-status">
-      <span class="live-dot"></span>
-      <span>Live</span>
-    </div>
-  </div>
-  <div class="group-card">
-    <div class="group-title">
-      Service Alerts
-    </div>
-    <div class="row-item">
-      <div class="left">
-        <img src="">
-        <span>Upcoming</span>
+    <div class="collapsible" [class.open]="isOpen">
+      <div class="collapsible-heading">
+        <h4>My Quick Services</h4>
+        <img src="./../../assets/collapsible.svg" alt="services" />
       </div>
-      <div class="right">
-        <h4 class="blue">213</h4>
-      </div>
-    </div>
-    <div class="row-item">
-      <div class="left">
-        <img src="">
-        <span>Delayed</span>
-      </div>
-      <div class="right">
-        <h4 class="orange">24</h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="single-card">
-    <div class="single-top">
-      <div class="left">
-        <img src="assets/breakdown.svg">
-        <span>Breakdown</span>
-      </div>
-    </div>
-    <div class="single-bottom">
-      <h2 class="red">23</h2>
-      <p>View All ↗</p>
-    </div>
-  </div>
-
-  <div class="single-card">
-    <div class="single-top">
-      <div class="left">
-        <img src="assets/inservice.svg">
-        <span>In Service</span>
-      </div>
-    </div>
-
-    <div class="single-bottom">
-      <h2 class="blue">123</h2>
-      <p>View All ↗</p>
-    </div>
-  </div>
-
-  <div class="uptime-alerts">
-    <div class="group-title">
-      Uptime Alerts
-    </div>
-
-    <div class="row-item">
-      <div class="left">
-        <img src="assets/stop.svg">
-        <span>Stop Now</span>
-      </div>
-      <div class="right">
-        <h4 class="blue">125</h4>
-      </div>
-    </div>
-    <div class="row-item">
-      <div class="left">
-        <img src="assets/visit.svg">
-        <span>Visit Soon</span>
-      </div>
-      <div class="right">
-        <h4 class="orange">65</h4>
-      </div>
-    </div>
-    <div class="row-item">
-      <div class="left">
-        <img src="assets/driver.svg">
-        <span>Driver Alerts</span>
-      </div>
-      <div class="right">
-        <h4 class="blue">128</h4>
+      <hr />
+      <div class="content">
+        <div class="content-item">
+          <img src="./../../assets/fleet.svg" />
+          <p>Fleet Health</p>
+        </div>
+        <div class="content-item">
+          <img src="./../../assets/reports.svg" />
+          <p>Reports</p>
+        </div>
+        <div class="content-item">
+          <img src="./../../assets/track.svg" />
+          <p>Track</p>
+        </div>
+        <div class="content-item">
+          <img src="./../../assets/dashboard.svg" />
+          <p>My dashboard</p>
+        </div>
+        <div class="content-item">
+          <img src="./../../assets/my-fleet.svg" />
+          <p>My Fleet</p>
+        </div>
+        <button class="edit-service">Edit/Add service</button>
+        <div class="content-item">
+          <img src="./../../assets/our-products.svg" />
+          <p>Our products</p>
+        </div>
+        <div class="content-item">
+          <img src="./../../assets/dealer.svg" />
+          <p>Locate Dealer</p>
+        </div>
+        <div class="content-item">
+          <img src="./../../assets/eicher-sure.svg" />
+          <p>Eicher Sure</p>
+        </div>
+        <div class="content-item">
+          <img src="./../../assets/documents.svg" />
+          <p>My documents</p>
+        </div>
+        <div class="content-item">
+          <img src="./../../assets/knowledge.svg" />
+          <p>Knowlege centre</p>
+        </div>
+        <hr />
+        <h4>Log Out</h4>
       </div>
     </div>
   </div>
-</div>
 </div>
