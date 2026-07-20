@@ -1,20 +1,99 @@
 <div class="landing-page">
-  <div class="collapsible-short">
-    <img src="./../../assets/collapsible.svg" (click)="isOpen = !isOpen" />
-    <hr />
-    <img src="./../../assets/fleet.svg" />
-    <img src="./../../assets/reports.svg" />
-    <img src="./../../assets/track.svg" />
-    <img src="./../../assets/my-fleet.svg" />
-    <img src="./../../assets/dashboard.svg" />
-    <img src="./../../assets/edit.svg" />
-    <img src="./../../assets/our-products.svg" />
-    <img src="./../../assets/dealer.svg" />
-    <img src="./../../assets/eicher-sure.svg" />
-    <img src="./../../assets/documents.svg" />
-    <img src="./../../assets/knowledge.svg" />
-    <hr />
-    <img src="" />
+  <div class="sidebar">
+    <div class="collapsible-short">
+      <img src="./../../assets/collapsible.svg" (click)="isOpen = !isOpen" [class.open]="!isOpen"/>
+      <hr />
+
+      <img src="./../../assets/fleet.svg" />
+      <img src="./../../assets/reports.svg" />
+      <img src="./../../assets/track.svg" />
+      <img src="./../../assets/my-fleet.svg" />
+      <img src="./../../assets/dashboard.svg" />
+      <img src="./../../assets/edit.svg" />
+      <div class="edit-bottom">
+        <img src="./../../assets/our-products.svg" />
+        <img src="./../../assets/dealer.svg" />
+        <img src="./../../assets/eicher-sure.svg" />
+        <img src="./../../assets/documents.svg" />
+        <img src="./../../assets/knowledge.svg" />
+      </div>
+
+      <hr />
+
+      <img src="./../../assets/logout.svg" />
+    </div>
+
+    <div class="collapsible" [class.open]="isOpen">
+      <div class="collapsible-heading">
+        <h4>My Quick Services</h4>
+        <img src="./../../assets/collapsible.svg" (click)="isOpen = !isOpen">
+      </div>
+
+      <hr />
+
+      <div class="content">
+        <div class="content-item">
+          <img src="./../../assets/fleet.svg" />
+          <p>Fleet Health</p>
+        </div>
+
+        <div class="content-item">
+          <img src="./../../assets/reports.svg" />
+          <p>Reports</p>
+        </div>
+
+        <div class="content-item">
+          <img src="./../../assets/track.svg" />
+          <p>Track</p>
+        </div>
+
+        <div class="content-item">
+          <img src="./../../assets/dashboard.svg" />
+          <p>My Dashboard</p>
+        </div>
+
+        <div class="content-item">
+          <img src="./../../assets/my-fleet.svg" />
+          <p>My Fleet</p>
+        </div>
+
+        <button class="edit-service">Edit / Add Service</button>
+
+        <div class="edit-bottom">
+          <div class="content-item">
+            <img src="./../../assets/our-products.svg" />
+            <p>Our Products</p>
+          </div>
+
+          <div class="content-item">
+            <img src="./../../assets/dealer.svg" />
+            <p>Locate Dealer</p>
+          </div>
+
+          <div class="content-item">
+            <img src="./../../assets/eicher-sure.svg" />
+            <p>Eicher Sure</p>
+          </div>
+
+          <div class="content-item">
+            <img src="./../../assets/documents.svg" />
+            <p>My Documents</p>
+          </div>
+
+          <div class="content-item">
+            <img src="./../../assets/knowledge.svg" />
+            <p>Knowledge Centre</p>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="content-item">
+          <img src="./../../assets/logout.svg" />
+          <p>Log Out</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="landing">
@@ -135,7 +214,12 @@
               <div class="stopped-vehicle">
                 <h4>Stopped Vehicle</h4>
                 <h3>223</h3>
-                <p>Last 4 Hours</p>
+                <select class="stopped-vehicle-dropdown">
+                  <option>Last 2 Hours</option>
+                  <option>Last 4 Hours</option>
+                  <option>Last 8 Hours</option>
+                  <option>Last 12 Hours</option>
+                </select>
               </div>
 
               <div class="device-attention">
@@ -181,7 +265,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="fuelAndEnergy">
           <div class="fuel-header">
             <div class="fuel-title">
@@ -193,15 +277,20 @@
             </div>
           </div>
           <div class="fuel-tabs">
-            <button class="active">Diesel</button>
-            <button>EV</button>
-            <button>CNG</button>
-            <button>LNG</button>
+            <button (click)="setActive('Diesel')" [class.active]="activeMenu === 'Diesel'">
+              Diesel
+            </button>
+            <button (click)="setActive('EV')" [class.active]="activeMenu === 'EV'">EV</button>
+            <button (click)="setActive('CNG')" [class.active]="activeMenu === 'CNG'">CNG</button>
+            <button (click)="setActive('LNG')" [class.active]="activeMenu === 'LNG'">LNG</button>
           </div>
           <div class="fuel-content">
             <div class="fuel-chart">
               <h5>Fuel Efficiency</h5>
-              <div class="graph-area"></div>
+              <div class="graph-area">
+                <canvas baseChart [data]="barChartFuel" [options]="barChartOptions" [type]="'bar'">
+                </canvas>
+              </div>
             </div>
             <div class="fuel-side">
               <div class="info-card">
@@ -235,7 +324,7 @@
           <div class="group-title">Service Alerts</div>
           <div class="row-item">
             <div class="left">
-              <img src="" />
+              <img src="./../../assets/upcoming.svg" />
               <span>Upcoming</span>
             </div>
             <div class="right">
@@ -244,7 +333,7 @@
           </div>
           <div class="row-item">
             <div class="left">
-              <img src="" />
+              <img src="./../../assets/delayed.svg" />
               <span>Delayed</span>
             </div>
             <div class="right">
@@ -256,7 +345,7 @@
         <div class="single-card">
           <div class="single-top">
             <div class="left">
-              <img src="assets/breakdown.svg" />
+              <img src="./../../assets/breakdown.svg" />
               <span>Breakdown</span>
             </div>
           </div>
@@ -269,7 +358,7 @@
         <div class="single-card">
           <div class="single-top">
             <div class="left">
-              <img src="assets/inservice.svg" />
+              <img src="assets/inService.svg" />
               <span>In Service</span>
             </div>
           </div>
@@ -311,59 +400,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="collapsible" [class.open]="isOpen">
-      <div class="collapsible-heading">
-        <h4>My Quick Services</h4>
-        <img src="./../../assets/collapsible.svg" alt="services" />
-      </div>
-      <hr />
-      <div class="content">
-        <div class="content-item">
-          <img src="./../../assets/fleet.svg" />
-          <p>Fleet Health</p>
-        </div>
-        <div class="content-item">
-          <img src="./../../assets/reports.svg" />
-          <p>Reports</p>
-        </div>
-        <div class="content-item">
-          <img src="./../../assets/track.svg" />
-          <p>Track</p>
-        </div>
-        <div class="content-item">
-          <img src="./../../assets/dashboard.svg" />
-          <p>My dashboard</p>
-        </div>
-        <div class="content-item">
-          <img src="./../../assets/my-fleet.svg" />
-          <p>My Fleet</p>
-        </div>
-        <button class="edit-service">Edit/Add service</button>
-        <div class="content-item">
-          <img src="./../../assets/our-products.svg" />
-          <p>Our products</p>
-        </div>
-        <div class="content-item">
-          <img src="./../../assets/dealer.svg" />
-          <p>Locate Dealer</p>
-        </div>
-        <div class="content-item">
-          <img src="./../../assets/eicher-sure.svg" />
-          <p>Eicher Sure</p>
-        </div>
-        <div class="content-item">
-          <img src="./../../assets/documents.svg" />
-          <p>My documents</p>
-        </div>
-        <div class="content-item">
-          <img src="./../../assets/knowledge.svg" />
-          <p>Knowlege centre</p>
-        </div>
-        <hr />
-        <h4>Log Out</h4>
       </div>
     </div>
   </div>

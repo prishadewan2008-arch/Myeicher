@@ -54,8 +54,30 @@ export class LandingPage {
 
 public barChartOptions: ChartConfiguration<'bar'>['options'] = {
   responsive: true,
+  maintainAspectRatio: false,
 };
 
+public barChartFuel: ChartConfiguration<'bar'>['data'] = {
+  labels: [
+    'May',
+    'June',
+    'July',
+    'August',
+    'September'
+  ],
+  datasets: [
+    {
+      label: 'Mileage',
+      data: [20, 10, 15, 8, 9]
+    }
+  ]
+};
 isOpen = false;
+
+activeMenu = 'Diesel';
+
+setActive(menu: string) {
+  this.activeMenu = menu;
+}
 
 }

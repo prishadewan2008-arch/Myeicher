@@ -38,8 +38,8 @@ export class MainLayout {
         [this.data[5], this.data[6], this.data[7]],
         [this.data[8]],
       ];
+      this.selectUser('Prisha');
     });
-    this.selectUser('Prisha');
     this.authService.userName$.subscribe(name => {
     this.loggedInUserName = name;
 });
@@ -124,6 +124,8 @@ export class MainLayout {
 
     if (!querySnapshot.empty) {
       const userData = querySnapshot.docs[0].data();
+
+console.log(userData);
       if (userData['isAdmin'] === true) {
         this.isAdmin = true;
         this.allowedFeatures = this.data.map((section) => section.id);
