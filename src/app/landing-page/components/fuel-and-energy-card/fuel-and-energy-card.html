@@ -1,0 +1,44 @@
+<div class="fuelAndEnergy">
+          <div class="fuel-header">
+            <div class="fuel-title">
+              <h4>Fuel & Energy</h4>
+              <span>Last 7 days</span>
+            </div>
+            <div class="action-required">
+              <span>Action Required</span>
+            </div>
+          </div>
+          <div class="fuel-tabs">
+            <button (click)="setActive('Diesel')" [class.active]="activeMenu === 'Diesel'">
+              Diesel
+            </button>
+            <button (click)="setActive('EV')" [class.active]="activeMenu === 'EV'">EV</button>
+            <button (click)="setActive('CNG')" [class.active]="activeMenu === 'CNG'">CNG</button>
+            <button (click)="setActive('LNG')" [class.active]="activeMenu === 'LNG'">LNG</button>
+          </div>
+          <div class="fuel-content">
+            <div class="fuel-chart">
+              <h5>Fuel Efficiency</h5>
+              <div class="graph-area">
+                <canvas baseChart [data]="barChartFuel" [options]="barChartOptions" [type]="'bar'">
+                </canvas>
+              </div>
+            </div>
+            <div class="fuel-side">
+              <div class="info-card">
+                <div class="card-top">
+                  <span>Average Efficiency</span>
+                  <span>></span>
+                </div>
+                <h2>6 <span>km/L</span></h2>
+              </div>
+              <div class="info-card">
+                <div class="card-top">
+                  <span>Fuel Drain</span>
+                  <span>></span>
+                </div>
+                <h2 class="danger">2,030 <span>L</span></h2>
+              </div>
+            </div>
+          </div>
+        </div>

@@ -1,0 +1,35 @@
+<div class="fleet-card">
+            <div class="fleet-header">
+              <div class="fleet-heading">
+                <h4>
+                  Fleet Utilization
+                  <span class="sub-text">(Km Operated per Vehicle)</span>
+                </h4>
+              </div>
+
+              <p class="days">Last 7 days</p>
+            </div>
+
+            <div class="graph-space">
+              <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="'bar'">
+              </canvas>
+            </div>
+
+            <div class="fleet-boxes">
+              <div class="peak-day">
+                <p class="label">PEAK DAY</p>
+
+                <div class="peak-info">
+                  <span>23rd May</span>
+                  <hr />
+                  <span>400 Km</span>
+                </div>
+              </div>
+
+              <div class="peak-day">
+                <p class="label">AVERAGE</p>
+
+                <h4>150 Km</h4>
+              </div>
+            </div>
+          </div>

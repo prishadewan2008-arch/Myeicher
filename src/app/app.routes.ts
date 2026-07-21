@@ -7,6 +7,7 @@ import { LandingPage } from './landing-page/landing-page';
 import { Alerts } from './alerts/alerts';
 import { MySubscriptions } from './my-subscriptions/my-subscriptions';
 import { MainLayout } from './main-layout/main-layout';
+import { ViewUpdates } from './landing-page/view-updates/view-updates';
 
 export const routes: Routes = [
   { path: '', component: LoginPage },
@@ -20,6 +21,7 @@ export const routes: Routes = [
       { path: 'landing-page', component: LandingPage },
       { path: 'alerts', component: Alerts },
       { path: 'my-subscriptions', component: MySubscriptions },
+      { path: 'app-view-updates', component: ViewUpdates},
     ],
   },
 ];

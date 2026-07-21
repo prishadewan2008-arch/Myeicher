@@ -1,6 +1,7 @@
 <div class="landing-page">
   <div class="sidebar">
-    <div class="collapsible-short">
+    <app-collapsible-card></app-collapsible-card>
+    <!-- <div class="collapsible-short">
       <img src="./../../assets/collapsible.svg" (click)="isOpen = !isOpen" [class.open]="!isOpen"/>
       <hr />
 
@@ -21,9 +22,9 @@
       <hr />
 
       <img src="./../../assets/logout.svg" />
-    </div>
+    </div> -->
 
-    <div class="collapsible" [class.open]="isOpen">
+    <!-- <div class="collapsible" [class.open]="isOpen">
       <div class="collapsible-heading">
         <h4>My Quick Services</h4>
         <img src="./../../assets/collapsible.svg" (click)="isOpen = !isOpen">
@@ -93,21 +94,21 @@
           <p>Log Out</p>
         </div>
       </div>
-    </div>
+    </div>  -->
   </div>
 
   <div class="landing">
-    <div class="hero-section">
+    <!-- <div class="hero-section">
       <div class="hero-image">
         <img src="./../../assets/truck2_portal.svg" alt="Truck2" />
-        <!-- <div
+        <div
           class="trucks"
           *ngFor="let img of images; let i = index"
           [class.active]="currentIndex() === i"
           [class.prev]="prevIndex() === i && prevIndex() !== currentIndex()"
           [class.hidden]="currentIndex() !== i && (prevIndex() !== i || prevIndex() === currentIndex())"
           [style.img]="'url(' + img + ')'"
-        ></div> -->
+        ></div>
       </div>
       <div class="hero-content">
         <div class="progress-ring">
@@ -176,12 +177,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
+    <app-hero-banner></app-hero-banner>
     <div class="landing-content">
       <div class="landing-page-left">
         <div class="trackAndFleet">
-          <div class="fleet-card">
+          <!-- <div class="fleet-card">
             <div class="track-heading">
               <h4>Tracking</h4>
               <span class="live-status">
@@ -191,9 +193,7 @@
             </div>
 
             <div class="tracking-content">
-              <!-- Google Maps Placeholder -->
               <div class="map-container">
-                <!-- Google Map will come here -->
               </div>
 
               <div class="tracking-right">
@@ -227,9 +227,11 @@
                 <h3>42</h3>
               </div>
             </div>
-          </div>
+          </div> -->
+          <app-tracking-card></app-tracking-card>
 
-          <div class="fleet-card">
+         <app-fleet-utilisation-card></app-fleet-utilisation-card>
+          <!-- <div class="fleet-card">
             <div class="fleet-header">
               <div class="fleet-heading">
                 <h4>
@@ -263,10 +265,11 @@
                 <h4>150 Km</h4>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
-        <div class="fuelAndEnergy">
+        <app-fuel-and-energy-card></app-fuel-and-energy-card>
+        <!-- <div class="fuelAndEnergy">
           <div class="fuel-header">
             <div class="fuel-title">
               <h4>Fuel & Energy</h4>
@@ -309,10 +312,11 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
-      <div class="uptime-card">
+      <app-uptime-card></app-uptime-card>
+      <!-- <div class="uptime-card">
         <div class="uptime-header">
           <h4>Uptime</h4>
           <div class="live-status">
@@ -400,7 +404,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

@@ -1,0 +1,46 @@
+.update-page {
+  position: relative;
+  top: 60px;
+  left: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.update-header {
+  display: flex;
+  gap: 23px;
+  align-items: center;
+  margin-bottom: 26px;
+
+  h2 {
+    color: #073a81;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  p {
+    color: #d8231d;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    align-items: start;
+    margin: 0 10px;
+}
+
+.card {
+  border-radius: 5px;
+  padding: 18px;
+  box-shadow:
+    0 2px 8px #0f172a0f,
+    0 8px 24px #0f172a14;
+
+  h2 {
+    font-weight: 600;
+    font-size: 19px;
+    color: #0b3c8c;
+  }
+}

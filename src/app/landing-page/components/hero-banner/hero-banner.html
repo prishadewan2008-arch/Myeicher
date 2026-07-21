@@ -1,0 +1,80 @@
+ <div class="hero-section">
+      <div class="hero-image">
+        <img src="./../../assets/truck2_portal.svg" alt="Truck2" />
+        <!-- <div
+          class="trucks"
+          *ngFor="let img of images; let i = index"
+          [class.active]="currentIndex() === i"
+          [class.prev]="prevIndex() === i && prevIndex() !== currentIndex()"
+          [class.hidden]="currentIndex() !== i && (prevIndex() !== i || prevIndex() === currentIndex())"
+          [style.img]="'url(' + img + ')'"
+        ></div> -->
+      </div>
+      <div class="hero-content">
+        <div class="progress-ring">
+          <span>88%</span>
+        </div>
+        <div class="hero-text">
+          <h3>96</h3>
+          <h4>Eicher connected vehicles</h4>
+          <p>out of <strong>109</strong> Total fleet</p>
+          <p class="view-fleet">View Fleet →</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="updates-card">
+          <div class="top">
+            <h3>Updates</h3>
+            <span>New</span>
+          </div>
+
+          <div class="middle">
+            <div class="text">
+              <h4>4</h4>
+              <h5>New KPIs</h5>
+              <p>Added in Past 2 Months</p>
+            </div>
+
+            <img src="./../../assets/speaker-icon.svg" alt="speaker-icon" />
+          </div>
+
+          <button (click)="updates()">
+            View Updates
+            <span>→</span>
+          </button>
+        </div>
+
+        <div class="activate-card">
+          <div class="top">
+            <h3>Activate Now</h3>
+          </div>
+
+          <div class="middle">
+            <div class="text">
+              <p>Eicher connect API now</p>
+            </div>
+            <img src="./../../assets/upsell-truck.svg" alt="speaker-icon" />
+          </div>
+
+          <button>
+            Explore
+            <span>→</span>
+          </button>
+        </div>
+
+        <div class="renewals-card">
+          <div class="top">
+            <h3>Renewals</h3>
+          </div>
+
+          <div class="middle">
+            <div class="text">
+              <h5>Digital Lock</h5>
+              <h4>2</h4>
+              <p>Vehicles due for renewal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
